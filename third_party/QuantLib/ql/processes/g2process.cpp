@@ -1,0 +1,300 @@
+/* -*- mode: c++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+
+/*
+ Copyright (C) 2006 Banca Profilo S.p.A.
+
+ This file is part of QuantLib, a free-software/open-source library
+ for financial quantitative analysts and developers - http://quantlib.org/
+
+ QuantLib is free software: you can redistribute it and/or modify it
+ under the terms of the QuantLib license.  You should have received a
+ copy of the license along with this program; if not, please email
+ <quantlib-dev@lists.sf.net>. The license is also available online at
+ <https://www.quantlib.org/license.shtml>.
+
+ This program is distributed in the hope that it will be useful, but WITHOUT
+ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ FOR A PARTICULAR PURPOSE.  See the license for more details.
+*/
+
+#include <ql/processes/g2process.hpp>
+#include <ql/processes/eulerdiscretization.hpp>
+
+namespace QuantLib {
+
+    G2Process::G2Process(Real a, Real sigma, Real b, Real eta, Real rho,
+                         const Handle<YieldTermStructure>& termStructure)
+    : a_(a), sigma_(sigma), b_(b), eta_(eta), rho_(rho),
+      xProcess_(new QuantLib::OrnsteinUhlenbeckProcess(a, sigma, 0.0)),
+      yProcess_(new QuantLib::OrnsteinUhlenbeckProcess(b, eta, 0.0)),
+      termStructure_(termStructure) {
+        registerWith(termStructure_);
+    }
+
+    Size G2Process::size() const {
+        return 2;
+    }
+
+    Array G2Process::initialValues() const {
+        Real z1_0 = termStructure_.empty() ? x0_ : phi(0.0);
+        return { z1_0, y0_ };
+    }
+
+    Array G2Process::drift(Time t, const Array& z) const {
+        // Drift in shifted coordinates z1 = x + phi(t), z2 = y:
+        //   dz1 = (-a*z1 + a*phi(t) + phi'(t)) dt + sigma dW1
+        //   dz2 = -b*z2 dt + eta dW2
+        Real shiftDrift = 0.0;
+        if (!termStructure_.empty()) {
+            const Real h = 1.0e-4;
+            Real phi_t  = phi(t);
+            Real phi_th = phi(t + h);
+            Real phiPrime = (phi_th - phi_t) / h;
+            shiftDrift = a_ * phi_t + phiPrime;
+        }
+        return {
+            xProcess_->drift(t, z[0]) + shiftDrift,
+            yProcess_->drift(t, z[1])
+        };
+    }
+
+    Matrix G2Process::diffusion(Time, const Array&) const {
+        /* the correlation matrix is
+           |  1   rho |
+           | rho   1  |
+           whose square root (which is used here) is
+           |  1          0       |
+           | rho   sqrt(1-rho^2) |
+        */
+        Matrix tmp(2,2);
+        Real sigma1 = sigma_;
+        Real sigma2 = eta_;
+        tmp[0][0] = sigma1;       tmp[0][1] = 0.0;
+        tmp[1][0] = rho_*sigma1;  tmp[1][1] = std::sqrt(1.0-rho_*rho_)*sigma2;
+        return tmp;
+    }
+
+    Array G2Process::expectation(Time t0, const Array& z0,
+                                 Time dt) const {
+        // E[z1(t0+dt) | z1(t0)] = z1(t0)*exp(-a*dt)
+        //                       + phi(t0+dt) - phi(t0)*exp(-a*dt)
+        // E[z2(t0+dt) | z2(t0)] = z2(t0)*exp(-b*dt)
+        Real shiftExp = 0.0;
+        if (!termStructure_.empty()) {
+            shiftExp = phi(t0 + dt) - phi(t0) * std::exp(-a_ * dt);
+        }
+        return {
+            xProcess_->expectation(t0, z0[0], dt) + shiftExp,
+            yProcess_->expectation(t0, z0[1], dt)
+        };
+    }
+
+    Matrix G2Process::stdDeviation(Time t0, const Array& x0, Time dt) const {
+        /* the correlation matrix is
+           |  1   rho |
+           | rho   1  |
+           whose square root (which is used here) is
+           |  1          0       |
+           | rho   sqrt(1-rho^2) |
+        */
+        Matrix tmp(2,2);
+        Real sigma1 = xProcess_->stdDeviation(t0, x0[0], dt);
+        Real sigma2 = yProcess_->stdDeviation(t0, x0[1], dt);
+        Real expa = std::exp(-a_*dt), expb = std::exp(-b_*dt);
+        Real H = (rho_*sigma_*eta_)/(a_+b_)*(1-expa*expb);
+        Real den =
+            (0.5*sigma_*eta_)*std::sqrt((1-expa*expa)*(1-expb*expb)/(a_*b_));
+        Real newRho = H/den;
+        tmp[0][0] = sigma1;
+        tmp[0][1] = 0.0;
+        tmp[1][0] = newRho*sigma2;
+        tmp[1][1] = std::sqrt(1.0-newRho*newRho)*sigma2;
+        return tmp;
+    }
+
+    Matrix G2Process::covariance(Time t0, const Array& x0, Time dt) const {
+        Matrix sigma = stdDeviation(t0, x0, dt);
+        Matrix result = sigma*transpose(sigma);
+        return result;
+    }
+
+    Real G2Process::x0() const {
+        return termStructure_.empty() ? x0_ : phi(0.0);
+    }
+
+    Real G2Process::y0() const {
+        return y0_;
+    }
+
+    Real G2Process::a() const {
+        return a_;
+    }
+
+    Real G2Process::sigma() const {
+        return sigma_;
+    }
+
+    Real G2Process::b() const {
+        return b_;
+    }
+
+    Real G2Process::eta() const {
+        return eta_;
+    }
+
+    Real G2Process::rho() const {
+        return rho_;
+    }
+
+    const Handle<YieldTermStructure>& G2Process::termStructure() const {
+        return termStructure_;
+    }
+
+    Real G2Process::phi(Time t) const {
+        QL_REQUIRE(!termStructure_.empty(),
+                   "no term structure given to G2Process");
+        Rate forward = termStructure_->forwardRate(t, t, Continuous, NoFrequency);
+        Real temp1 = sigma_*(1.0-std::exp(-a_*t))/a_;
+        Real temp2 = eta_ *(1.0-std::exp(-b_*t))/b_;
+        return 0.5*temp1*temp1 + 0.5*temp2*temp2 + rho_*temp1*temp2 + forward;
+    }
+
+    Rate G2Process::shortRate(Time, Real z1, Real z2) const {
+        // The simulated state already includes phi(t) in z1, so r = z1 + z2.
+        return z1 + z2;
+    }
+
+
+    G2ForwardProcess::G2ForwardProcess(Real a, Real sigma, Real b, Real eta, Real rho,
+                                       const Handle<YieldTermStructure>& termStructure)
+    : a_(a), sigma_(sigma), b_(b), eta_(eta), rho_(rho),
+      xProcess_(new QuantLib::OrnsteinUhlenbeckProcess(a, sigma, 0.0)),
+      yProcess_(new QuantLib::OrnsteinUhlenbeckProcess(b, eta, 0.0)),
+      termStructure_(termStructure) {
+        registerWith(termStructure_);
+    }
+
+    Size G2ForwardProcess::size() const {
+        return 2;
+    }
+
+    Array G2ForwardProcess::initialValues() const {
+        Real z1_0 = termStructure_.empty() ? x0_ : phi(0.0);
+        return { z1_0, y0_ };
+    }
+
+    Array G2ForwardProcess::drift(Time t, const Array& z) const {
+        Real shiftDrift = 0.0;
+        if (!termStructure_.empty()) {
+            const Real h = 1.0e-4;
+            Real phi_t  = phi(t);
+            Real phi_th = phi(t + h);
+            Real phiPrime = (phi_th - phi_t) / h;
+            shiftDrift = a_ * phi_t + phiPrime;
+        }
+        return {
+            xProcess_->drift(t, z[0]) + xForwardDrift(t, T_) + shiftDrift,
+            yProcess_->drift(t, z[1]) + yForwardDrift(t, T_)
+        };
+    }
+
+    Matrix G2ForwardProcess::diffusion(Time, const Array&) const {
+        Matrix tmp(2,2);
+        Real sigma1 = sigma_;
+        Real sigma2 = eta_;
+        tmp[0][0] = sigma1;       tmp[0][1] = 0.0;
+        tmp[1][0] = rho_*sigma1;  tmp[1][1] = std::sqrt(1.0-rho_*rho_)*sigma2;
+        return tmp;
+    }
+
+    Array G2ForwardProcess::expectation(Time t0, const Array& z0,
+                                        Time dt) const {
+        Real shiftExp = 0.0;
+        if (!termStructure_.empty()) {
+            shiftExp = phi(t0 + dt) - phi(t0) * std::exp(-a_ * dt);
+        }
+        return {
+            xProcess_->expectation(t0, z0[0], dt) - Mx_T(t0, t0+dt, T_) + shiftExp,
+            yProcess_->expectation(t0, z0[1], dt) - My_T(t0, t0+dt, T_)
+        };
+    }
+
+    Matrix G2ForwardProcess::stdDeviation(Time t0, const Array& x0, Time dt) const {
+        Matrix tmp(2,2);
+        Real sigma1 = xProcess_->stdDeviation(t0, x0[0], dt);
+        Real sigma2 = yProcess_->stdDeviation(t0, x0[1], dt);
+        Real expa = std::exp(-a_*dt), expb = std::exp(-b_*dt);
+        Real H = (rho_*sigma_*eta_)/(a_+b_)*(1-expa*expb);
+        Real den =
+            (0.5*sigma_*eta_)*std::sqrt((1-expa*expa)*(1-expb*expb)/(a_*b_));
+        Real newRho = H/den;
+        tmp[0][0] = sigma1;
+        tmp[0][1] = 0.0;
+        tmp[1][0] = newRho*sigma2;
+        tmp[1][1] = std::sqrt(1.0-newRho*newRho)*sigma2;
+        return tmp;
+    }
+
+    Matrix G2ForwardProcess::covariance(Time t0, const Array& x0, Time dt) const {
+        Matrix sigma = stdDeviation(t0, x0, dt);
+        Matrix result = sigma*transpose(sigma);
+        return result;
+    }
+
+    Real G2ForwardProcess::xForwardDrift(Time t, Time T) const {
+        Real expatT = std::exp(-a_*(T-t));
+        Real expbtT = std::exp(-b_*(T-t));
+
+        return -(sigma_*sigma_/a_) * (1-expatT)
+              - (rho_*sigma_*eta_/b_) * (1-expbtT);
+    }
+
+    Real G2ForwardProcess::yForwardDrift(Time t, Time T) const {
+        Real expatT = std::exp(-a_*(T-t));
+        Real expbtT = std::exp(-b_*(T-t));
+
+        return -(eta_*eta_/b_) * (1-expbtT)
+              - (rho_*sigma_*eta_/a_) * (1-expatT);
+    }
+
+    Real G2ForwardProcess::Mx_T(Real s, Real t, Real T) const {
+        Real M;
+        M = ( (sigma_*sigma_)/(a_*a_) + (rho_*sigma_*eta_)/(a_*b_) )
+          * (1-std::exp(-a_*(t-s)));
+        M += -(sigma_*sigma_)/(2*a_*a_) *
+              (std::exp(-a_*(T-t))-std::exp(-a_*(T+t-2*s)));
+        M += -(rho_*sigma_*eta_)/(b_*(a_+b_))
+            * (std::exp(-b_*(T-t)) -std::exp(-b_*T-a_*t+(a_+b_)*s));
+        return M;
+    }
+
+    Real G2ForwardProcess::My_T(Real s, Real t, Real T) const {
+        Real M;
+        M = ( (eta_*eta_)/(b_*b_) + (rho_*sigma_*eta_)/(a_*b_) )
+          * (1-std::exp(-b_*(t-s)));
+        M += -(eta_*eta_)/(2*b_*b_) *
+              (std::exp(-b_*(T-t))-std::exp(-b_*(T+t-2*s)));
+        M += -(rho_*sigma_*eta_)/(a_*(a_+b_))
+            * (std::exp(-a_*(T-t))-std::exp(-a_*T-b_*t+(a_+b_)*s));
+        return M;
+    }
+
+    const Handle<YieldTermStructure>& G2ForwardProcess::termStructure() const {
+        return termStructure_;
+    }
+
+    Real G2ForwardProcess::phi(Time t) const {
+        QL_REQUIRE(!termStructure_.empty(),
+                   "no term structure given to G2ForwardProcess");
+        Rate forward = termStructure_->forwardRate(t, t, Continuous, NoFrequency);
+        Real temp1 = sigma_*(1.0-std::exp(-a_*t))/a_;
+        Real temp2 = eta_ *(1.0-std::exp(-b_*t))/b_;
+        return 0.5*temp1*temp1 + 0.5*temp2*temp2 + rho_*temp1*temp2 + forward;
+    }
+
+    Rate G2ForwardProcess::shortRate(Time, Real z1, Real z2) const {
+        return z1 + z2;
+    }
+
+}
+

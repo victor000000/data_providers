@@ -1,0 +1,9 @@
+symbol,instrument_type,name,source
+VXX,ETN,iPath Series B S&P 500 VIX Short-Term Futures ETN,https://ipathetn.barclays/
+VXZ,ETN,iPath Series B S&P 500 VIX Mid-Term Futures ETN,https://ipathetn.barclays/
+UVXY,ETF,ProShares Ultra VIX Short-Term Futures ETF,https://www.proshares.com/strategies/volatility
+SVXY,ETF,ProShares Short VIX Short-Term Futures ETF,https://www.proshares.com/strategies/volatility
+VIXY,ETF,ProShares VIX Short-Term Futures ETF,https://www.proshares.com/strategies/volatility
+VIXM,ETF,ProShares VIX Mid-Term Futures ETF,https://www.proshares.com/strategies/volatility
+UVIX,ETF,2x Long VIX Futures ETF,https://www.volatilityshares.com/resource/faq
+SVIX,ETF,-1x Short VIX Futures ETF,https://www.volatilityshares.com/resource/faq

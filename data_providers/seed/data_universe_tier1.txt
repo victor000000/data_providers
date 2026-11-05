@@ -1,0 +1,9 @@
+# Tier-1: tickers we are trading / traded this cycle (current + closed positions)
+META
+CRWD
+SWKS
+TLT
+EWZ
+ILMN
+NBIS
+SNDK

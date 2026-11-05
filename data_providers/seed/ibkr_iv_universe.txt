@@ -1,0 +1,41 @@
+# IBKR TWS IV sweep — what Alpaca cannot cover (indices + futures) + tier-1 validator series
+# Format: SYMBOL (stock/ETF, SMART) · IDX:SYM:EXCH · FUT:SYM:EXCH (continuous future)
+
+# tier-1: names we are trading (validator series, cross-check vs Alpaca-computed IV)
+META
+CRWD
+SWKS
+TLT
+EWZ
+ILMN
+NBIS
+SNDK
+
+# indices (US)
+IDX:SPX:CBOE
+IDX:NDX:NASDAQ
+IDX:RUT:RUSSELL,CBOE,SMART
+IDX:VIX:CBOE
+
+# futures (continuous)
+FUT:ES:CME
+FUT:NQ:CME
+FUT:CL:NYMEX
+FUT:GC:COMEX
+FUT:ZB:CBOT
+
+# bonds ETFs (rate-vol sleeve for the screener)
+IEF
+LQD
+
+# universe names added 2026-10-01 so IVR/IVP is computable for the whole screen
+NOW
+NKE
+TWST
+PBR
+WBD
+SCHW
+CCL
+SPY
+QQQ
+IWM

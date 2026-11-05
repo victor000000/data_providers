@@ -1,0 +1,10 @@
+[Unit]
+Description=Check ThetaData terminal after WSL boot and periodically
+
+[Timer]
+OnBootSec=20
+OnUnitInactiveSec=120
+Unit=thetadata-recovery.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,797 @@
+[
+  {
+    "source": "apps/audit/check_duplicates.py",
+    "target": "data_providers/jobs/audit/check_duplicates.py",
+    "sha256_before": "b70be81545314a1db1cb7fa6079c3e1eb7fcc6165f6026caece067bbeb99e393"
+  },
+  {
+    "source": "apps/data_ops/__init__.py",
+    "target": "data_providers/jobs/data_ops/__init__.py",
+    "sha256_before": "41449af42ede6c200bf86b82cdf6653bdcedaeb13dbfd56b5fba30166d518e83"
+  },
+  {
+    "source": "apps/data_ops/backfill_cn_expiry.py",
+    "target": "data_providers/jobs/data_ops/backfill_cn_expiry.py",
+    "sha256_before": "987a3dc60082c03a9a852df8074fd9bd2a89efb23350867f2c77e89d3318f0e4"
+  },
+  {
+    "source": "apps/data_ops/backfill_us_window.py",
+    "target": "data_providers/jobs/data_ops/backfill_us_window.py",
+    "sha256_before": "bd4728740dc4e7a054cefc65e9cc972795700db3c009ed2f0b6bf29f8887cac4"
+  },
+  {
+    "source": "apps/data_ops/build_calendar_events.py",
+    "target": "data_providers/jobs/data_ops/build_calendar_events.py",
+    "sha256_before": "9553c3f43ffd5dcdd2a3438e37a32e985b32c4b51330e657c800e146f0ad3694"
+  },
+  {
+    "source": "apps/data_ops/build_equity_events.py",
+    "target": "data_providers/jobs/data_ops/build_equity_events.py",
+    "sha256_before": "7ed42b97cc8a5e8dbbd6b4a7b31ec9a9ff3de461993d5d20536cb70561e8352c"
+  },
+  {
+    "source": "apps/data_ops/build_reference.py",
+    "target": "data_providers/jobs/data_ops/build_reference.py",
+    "sha256_before": "b554663f0b1db0098ee564a9972d8b1c3bdc999ddfa7d1de3a8502b97f18404a"
+  },
+  {
+    "source": "apps/data_ops/build_symbol_map.py",
+    "target": "data_providers/jobs/data_ops/build_symbol_map.py",
+    "sha256_before": "99956985f3cc1c0a8f93644b59ecc06a3c800edb30d49cf208606cd2d7d46c19"
+  },
+  {
+    "source": "apps/data_ops/build_universe.py",
+    "target": "data_providers/jobs/data_ops/build_universe.py",
+    "sha256_before": "1dad3fe610da9e583e0209da9d99878bea1b1514ab57efb91ffc1e2b02ec9c35"
+  },
+  {
+    "source": "apps/data_ops/check_and_save_marks.py",
+    "target": "data_providers/jobs/data_ops/check_and_save_marks.py",
+    "sha256_before": "44f0c1877d815faea57facd20a093e34370d0444d7747eedbd7bc9470d123d94"
+  },
+  {
+    "source": "apps/data_ops/cn_contract.py",
+    "target": "data_providers/jobs/data_ops/cn_contract.py",
+    "sha256_before": "36407ad065cca7fb47c312ff672cf8eeea02644b64b5a66d03923ebd700e99a4"
+  },
+  {
+    "source": "apps/data_ops/cn_expiry.py",
+    "target": "data_providers/jobs/data_ops/cn_expiry.py",
+    "sha256_before": "288e882c513bd0b2c950e3ddfec6114d083c2162e45518857423a95ed1e7f663"
+  },
+  {
+    "source": "apps/data_ops/db_add_indexes.py",
+    "target": "data_providers/jobs/data_ops/db_add_indexes.py",
+    "sha256_before": "64c03be58efbc59fd65a622d7d11f352dd7cb4704b313f5730151804950927bc"
+  },
+  {
+    "source": "apps/data_ops/db_add_log_keys.py",
+    "target": "data_providers/jobs/data_ops/db_add_log_keys.py",
+    "sha256_before": "ae800e59dfd4480b2338ac73eba78b7001fb87d9ad43ef3e150858fe46bbc146"
+  },
+  {
+    "source": "apps/data_ops/db_migrate_v2.py",
+    "target": "data_providers/jobs/data_ops/db_migrate_v2.py",
+    "sha256_before": "7ef89920f3a7f7803a797eceb5d82664edf5c67994646aa6b4bc8b388430dd1c"
+  },
+  {
+    "source": "apps/data_ops/db_restore_pks.py",
+    "target": "data_providers/jobs/data_ops/db_restore_pks.py",
+    "sha256_before": "fd28dc84a121b853d3a27ac257ebb9b2451da1a1ab88c9a1775de541906cfced"
+  },
+  {
+    "source": "apps/data_ops/db_split_cn.py",
+    "target": "data_providers/jobs/data_ops/db_split_cn.py",
+    "sha256_before": "5e5c1bb122bd5ef9ba591558db49c748d94199f7b623ffecb324b193e2ad92c7"
+  },
+  {
+    "source": "apps/data_ops/db_split_market_history.py",
+    "target": "data_providers/jobs/data_ops/db_split_market_history.py",
+    "sha256_before": "813472b80d5ec226a8ae3fdb0eeb55508f4fb7d39e599cd4df21bb460210b2a1"
+  },
+  {
+    "source": "apps/data_ops/download_cn_option_bars.py",
+    "target": "data_providers/jobs/data_ops/download_cn_option_bars.py",
+    "sha256_before": "827dc3c69f8a22d5d3a3df115a13ed151ebcd97b557d439896ee5bed1fb977de"
+  },
+  {
+    "source": "apps/data_ops/download_fill_contracts.py",
+    "target": "data_providers/jobs/data_ops/download_fill_contracts.py",
+    "sha256_before": "c645ac43aae2a7bdfe6abf191fb24f726e5a520eb71641a2e4a83c4dc497cba4"
+  },
+  {
+    "source": "apps/data_ops/download_minute_bars.py",
+    "target": "data_providers/jobs/data_ops/download_minute_bars.py",
+    "sha256_before": "904f00d1c8a3847108c0b673328f420a8689e0349228e1324460a0f335986ef7"
+  },
+  {
+    "source": "apps/data_ops/download_option_minutes_grid.py",
+    "target": "data_providers/jobs/data_ops/download_option_minutes_grid.py",
+    "sha256_before": "6a71a3142bd8747419ae35b0443576b964770ad0419f6a65e800324580a64ba2"
+  },
+  {
+    "source": "apps/data_ops/fetch_cn_products.py",
+    "target": "data_providers/jobs/data_ops/fetch_cn_products.py",
+    "sha256_before": "d54b04e5fe134b7b939873ec6c047d94e14753117d488f34c32406e3c414a078"
+  },
+  {
+    "source": "apps/data_ops/fetch_extended_hours_prices.py",
+    "target": "data_providers/jobs/data_ops/fetch_extended_hours_prices.py",
+    "sha256_before": "db727ea7d798cb8b7c1cf4f9a8babf8ccff0f692aab1048ec51513076a490b55"
+  },
+  {
+    "source": "apps/data_ops/fetch_fundamentals.py",
+    "target": "data_providers/jobs/data_ops/fetch_fundamentals.py",
+    "sha256_before": "ecd682e5cc041272aacb53e752db748961735cb5635979316e0629056138ed4a"
+  },
+  {
+    "source": "apps/data_ops/fetch_ibkr_flex.py",
+    "target": "data_providers/jobs/data_ops/fetch_ibkr_flex.py",
+    "sha256_before": "70afc1d751f325a51b4cc14a60dac1a1aba4a2483a15de9f4336e6a4a5b2cd26"
+  },
+  {
+    "source": "apps/data_ops/fetch_tws_account.py",
+    "target": "data_providers/jobs/data_ops/fetch_tws_account.py",
+    "sha256_before": "e80fd461e4b360d255393e29179292d8629be769b66ac8056a17d1780362cbe7"
+  },
+  {
+    "source": "apps/data_ops/fill_underlying_minutes.py",
+    "target": "data_providers/jobs/data_ops/fill_underlying_minutes.py",
+    "sha256_before": "206e9b02b697d9636d5ec60dd0b6bb894a0077244db48b8d8671f553d01b4817"
+  },
+  {
+    "source": "apps/data_ops/migrate_akshare_staging.py",
+    "target": "data_providers/jobs/data_ops/migrate_akshare_staging.py",
+    "sha256_before": "98c9c1556fe0f3d23437324b117ac2e9d8f5935842df35c8968d3255bc648e7e"
+  },
+  {
+    "source": "apps/data_ops/prune_us_daily_duplicates.py",
+    "target": "data_providers/jobs/data_ops/prune_us_daily_duplicates.py",
+    "sha256_before": "7b11bc94acf494e799747781b34a2cce7a660d692c4b865026cb97f22e14c1fc"
+  },
+  {
+    "source": "apps/data_ops/rebuild_atm_summaries.py",
+    "target": "data_providers/jobs/data_ops/rebuild_atm_summaries.py",
+    "sha256_before": "eb2c5e1da1e3ff717b84bd841e860cdaa001f3f43b74291c3f020d8b7aac3dc0"
+  },
+  {
+    "source": "apps/data_ops/symbol_map_report.py",
+    "target": "data_providers/jobs/data_ops/symbol_map_report.py",
+    "sha256_before": "5c45917c22cd42e993f7741bff0c2ec4949896ca6577612162a727cc78f7ea42"
+  },
+  {
+    "source": "apps/data_ops/tws_watch_and_sweep.py",
+    "target": "data_providers/jobs/data_ops/tws_watch_and_sweep.py",
+    "sha256_before": "b9b6d9206a7ec40d065b63dedfe875f4ee076dcfc8380c5f138763be1bd7e984"
+  },
+  {
+    "source": "apps/screener/atm_smile_memory.py",
+    "target": "data_providers/jobs/history/atm_smile_memory.py",
+    "sha256_before": "502aafe5cc90f6ce137ae698549d1697b0bfdefa6d61bb10a0a73369637cbd25"
+  },
+  {
+    "source": "apps/screener/build_cn_futures.py",
+    "target": "data_providers/jobs/history/build_cn_futures.py",
+    "sha256_before": "985f893b04d1f74f945cdecaede52c9694152ff234d602470138abc8b5888fde"
+  },
+  {
+    "source": "apps/screener/build_iv_history_cn.py",
+    "target": "data_providers/jobs/history/build_iv_history_cn.py",
+    "sha256_before": "429d9dd0e96bec19d5d25e5e3da10352785dd69c6704dcab9752d96582e09780"
+  },
+  {
+    "source": "apps/screener/build_iv_history_cn_bulk.py",
+    "target": "data_providers/jobs/history/build_iv_history_cn_bulk.py",
+    "sha256_before": "0b953d22b54dd065f92bae50169bd4d81788c909e93528310ad94ad413db7489"
+  },
+  {
+    "source": "apps/screener/build_iv_history_cn_solver.py",
+    "target": "data_providers/jobs/history/build_iv_history_cn_solver.py",
+    "sha256_before": "8294ffd2e40c060b8001d923c076dfcad1288ae318e5b8724c195c85d413bf92"
+  },
+  {
+    "source": "apps/screener/build_iv_history_cn_venue.py",
+    "target": "data_providers/jobs/history/build_iv_history_cn_venue.py",
+    "sha256_before": "96d252cadf7dceca8e51d0a683fb889706b7a8777083669354fe4fe6777762da"
+  },
+  {
+    "source": "apps/screener/build_option_flow.py",
+    "target": "data_providers/jobs/history/build_option_flow.py",
+    "sha256_before": "907773025e3a58489c91097beb542ed0d3661581d0928a4776206732fdde8d08"
+  },
+  {
+    "source": "apps/screener/cn_iv/__init__.py",
+    "target": "data_providers/jobs/history/cn_iv/__init__.py",
+    "sha256_before": "033d15cc313b09f3df71d976b5912847edceb8b51a8f5f54628fff498e553394"
+  },
+  {
+    "source": "apps/screener/cn_iv/bars.py",
+    "target": "data_providers/jobs/history/cn_iv/bars.py",
+    "sha256_before": "983bb71976c7811a4654c1e6f22ae64711f8e1b9b67fd196eadad03fd3e7a446"
+  },
+  {
+    "source": "apps/screener/cn_iv/calendar.py",
+    "target": "data_providers/jobs/history/cn_iv/calendar.py",
+    "sha256_before": "fa4e801a90e2bdae0c7fa8f68ec6db2de72dbb12e55d9a4d9eab34cc90ce8d10"
+  },
+  {
+    "source": "apps/screener/cn_iv/chains.py",
+    "target": "data_providers/jobs/history/cn_iv/chains.py",
+    "sha256_before": "b6cea26aca62de36b03cfda055cb971d1f65ccb1b6fc5ac462c0b90ade5a7b94"
+  },
+  {
+    "source": "apps/screener/cn_iv/contracts.py",
+    "target": "data_providers/jobs/history/cn_iv/contracts.py",
+    "sha256_before": "8fb8e06d5cc874c49e732a4dc48cd04c6e453f03c063028847513b65ad3e2139"
+  },
+  {
+    "source": "apps/screener/cn_iv/dump.py",
+    "target": "data_providers/jobs/history/cn_iv/dump.py",
+    "sha256_before": "e44dc7f26e20814da3f80531ce7c112114d479a3b9b930257826c5753b0a6a51"
+  },
+  {
+    "source": "apps/screener/cn_iv/fetch.py",
+    "target": "data_providers/jobs/history/cn_iv/fetch.py",
+    "sha256_before": "95dbd85c6fdccbcce45bfa424d95079762a5f105b312eec53769b68a025440cc"
+  },
+  {
+    "source": "apps/screener/cn_iv/frames.py",
+    "target": "data_providers/jobs/history/cn_iv/frames.py",
+    "sha256_before": "fb2f2301b9a105656ed3e180b876f87f7a744778d592ade273211fd972a536bf"
+  },
+  {
+    "source": "apps/screener/cn_iv/product.py",
+    "target": "data_providers/jobs/history/cn_iv/product.py",
+    "sha256_before": "da096582f8f961a94e43f04df94fde883b2785b5013adfbcca2706c6f3d76ba0"
+  },
+  {
+    "source": "apps/screener/cn_iv/solve.py",
+    "target": "data_providers/jobs/history/cn_iv/solve.py",
+    "sha256_before": "97aa6849dd162594aad9679e65dd156a5eeb8d992c311fb3a14193a7295ccbd0"
+  },
+  {
+    "source": "apps/screener/cn_iv/underlying.py",
+    "target": "data_providers/jobs/history/cn_iv/underlying.py",
+    "sha256_before": "edae02fa14f83cc0f82dcaab30c24d40d91899f5db060af24f190ce9f9653ce7"
+  },
+  {
+    "source": "apps/screener/cn_iv/venue.py",
+    "target": "data_providers/jobs/history/cn_iv/venue.py",
+    "sha256_before": "7c2ba9a7b624f5a7e7d88e0be2137d352d639a518c3fa10af77483e458eaa438"
+  },
+  {
+    "source": "apps/screener/download_atm_iv.py",
+    "target": "data_providers/jobs/history/download_atm_iv.py",
+    "sha256_before": "ab7158958eb58f0e5b6cb02f5b189a105e3c8be32b03634bb8f0369d6f094f6c"
+  },
+  {
+    "source": "apps/screener/download_cn_option_bars.py",
+    "target": "data_providers/jobs/history/download_cn_option_bars.py",
+    "sha256_before": "18ce2af1862a9f0f2099391acf60cedd3cb82c8abac918e58402e1aa93beeecf"
+  },
+  {
+    "source": "apps/screener/download_option_bars.py",
+    "target": "data_providers/jobs/history/download_option_bars.py",
+    "sha256_before": "11baa87fbd55552aadbeaee14923105e3d5d5b2d839c554ce02f1de916de73d1"
+  },
+  {
+    "source": "apps/screener/fetch_iv_history_ibkr.py",
+    "target": "data_providers/jobs/history/fetch_iv_history_ibkr.py",
+    "sha256_before": "37840f7e1b24318bbf43312a9d91e5807e449a50430d520fd994f14dc8c80913"
+  },
+  {
+    "source": "apps/screener/fetch_screen_futu.py",
+    "target": "data_providers/jobs/history/fetch_screen_futu.py",
+    "sha256_before": "1b0cd287d8d7883527a51519c0d905cdeaa13d675180b56f2bb4868c7b7e609c"
+  },
+  {
+    "source": "apps/screener/ibkr_iv_anchor.py",
+    "target": "data_providers/jobs/history/ibkr_iv_anchor.py",
+    "sha256_before": "571603ade437c0b5941c2c62b245e21bf66c6a79d2947136e45b7b9857c35420"
+  },
+  {
+    "source": "apps/screener/ibkr_iv_request.py",
+    "target": "data_providers/jobs/history/ibkr_iv_request.py",
+    "sha256_before": "e23b3e8cbe52594f1783cbcceec9c45281477050006ebfe32161ac02bd541d50"
+  },
+  {
+    "source": "apps/screener/option_root_history.py",
+    "target": "data_providers/jobs/history/option_root_history.py",
+    "sha256_before": "88411ad65edcffdd98d1ad07171776e343c8c1413be7a383cedc1e3d21acceef"
+  },
+  {
+    "source": "apps/screener/option_spots.py",
+    "target": "data_providers/jobs/history/option_spots.py",
+    "sha256_before": "10645db6b04e5632c410aa7e191d2688e883ff2d6c49c84a7f0a0a4c087455f7"
+  },
+  {
+    "source": "apps/screener/option_universe.py",
+    "target": "data_providers/jobs/history/option_universe.py",
+    "sha256_before": "8e6c915a35171809c6890f809ba4dda153a12a6a68a627dac0cbfb597503482a"
+  },
+  {
+    "source": "apps/trade_log/__init__.py",
+    "target": "data_providers/jobs/trades/__init__.py",
+    "sha256_before": "4a13782d05a5ad5b6ad51a186e8a2d5b56cd1a33940b5b64a7dc6a40faf83471"
+  },
+  {
+    "source": "apps/trade_log/backfill_us_spots.py",
+    "target": "data_providers/jobs/trades/backfill_us_spots.py",
+    "sha256_before": "92bbfd7ef235c643097bc178bc349a76f81194fd0f439c384221c2e5371c6925"
+  },
+  {
+    "source": "apps/trade_log/backfill_us_window.py",
+    "target": "data_providers/jobs/trades/backfill_us_window.py",
+    "sha256_before": "d1daa967c75584987f63dce5723e096b5b21571ba11c6656db6f03f039aaf607"
+  },
+  {
+    "source": "apps/trade_log/broker_receipts.py",
+    "target": "data_providers/jobs/trades/broker_receipts.py",
+    "sha256_before": "2a770128e42839884c81350293004602b758a11ce4d78ef711018c7aee447904"
+  },
+  {
+    "source": "apps/trade_log/cn_minute_store.py",
+    "target": "data_providers/jobs/trades/cn_minute_store.py",
+    "sha256_before": "4911713b6cb5326c823a516aa918e22bd19af706ef42231765a43584719ce335"
+  },
+  {
+    "source": "apps/trade_log/cn_ticks.py",
+    "target": "data_providers/jobs/trades/cn_ticks.py",
+    "sha256_before": "8dc643be351b37c1c230fd56c2e5a2b81c16d7c0d9301d7a70fb83d77f55b6f4"
+  },
+  {
+    "source": "apps/trade_log/cn_trade_window.py",
+    "target": "data_providers/jobs/trades/cn_trade_window.py",
+    "sha256_before": "707f9b2b4ca738f3511973695b5de134192a817b0eacf573b96a273ba93b5f6c"
+  },
+  {
+    "source": "apps/trade_log/download_fill_contracts.py",
+    "target": "data_providers/jobs/trades/download_fill_contracts.py",
+    "sha256_before": "fa77810aa6bac7ffee038cedd4df113d49a08065b86078ca64b5d4a955742825"
+  },
+  {
+    "source": "apps/trade_log/fetch_cn_options.py",
+    "target": "data_providers/jobs/trades/fetch_cn_options.py",
+    "sha256_before": "8845b7f7c757827d0bff358f3b703bcfd5db96724d65536749d3cd755553200b"
+  },
+  {
+    "source": "apps/trade_log/fetch_ibkr_flex.py",
+    "target": "data_providers/jobs/trades/fetch_ibkr_flex.py",
+    "sha256_before": "aa05c22a5ba566fb55106cff04fa497ad4457620eb3093a32547b0cc02c4d862"
+  },
+  {
+    "source": "apps/trade_log/fetch_tws_executions.py",
+    "target": "data_providers/jobs/trades/fetch_tws_executions.py",
+    "sha256_before": "7972d9f332dad8d2b71b6a6f76e975a52e70ec5aab97ed1a3a9d5fbd9d6ce445"
+  },
+  {
+    "source": "apps/trade_log/fetch_tws_ibkr.py",
+    "target": "data_providers/jobs/trades/fetch_tws_ibkr.py",
+    "sha256_before": "fe914e94a1913b50329973aa2d5e1b3b9d3d1ecdb2aed9a603bc3628fa10cb45"
+  },
+  {
+    "source": "apps/trade_log/ibkr_order_collector.py",
+    "target": "data_providers/jobs/trades/ibkr_order_collector.py",
+    "sha256_before": "8de5317b00ba37970431a54bbbd678765b9cdf140083379b0fbd01483862f0ac"
+  },
+  {
+    "source": "apps/trade_log/journal_fields.py",
+    "target": "data_providers/jobs/trades/journal_fields.py",
+    "sha256_before": "9d6011d4cd963c78726c9dba67fb1fb7a8637bc2ee44450a55612215a21ac281"
+  },
+  {
+    "source": "apps/trade_log/journal_snapshots.py",
+    "target": "data_providers/jobs/trades/journal_snapshots.py",
+    "sha256_before": "523406c203b06f76e4674a6499c4ea9c5a5ea0994a5a1e2b61bf2ac2ecd4dee9"
+  },
+  {
+    "source": "apps/trade_log/load_cn_settlements.py",
+    "target": "data_providers/jobs/trades/load_cn_settlements.py",
+    "sha256_before": "08e8b7f9bbab2af7b3be41fbac1d7ed37fec2aebca8c5db2a1f060032be74943"
+  },
+  {
+    "source": "apps/trade_log/load_ibkr_activity.py",
+    "target": "data_providers/jobs/trades/load_ibkr_activity.py",
+    "sha256_before": "f9c8dcc0e2d424939a42def1a2e5dbc157f2285131c2adfadc2497f90228f48c"
+  },
+  {
+    "source": "apps/trade_log/load_ibkr_flex.py",
+    "target": "data_providers/jobs/trades/load_ibkr_flex.py",
+    "sha256_before": "385713631c782b33ab03e7f4762087ceb4862eedd6081b9ea9ef9249c922bd31"
+  },
+  {
+    "source": "apps/trade_log/load_journal.py",
+    "target": "data_providers/jobs/trades/load_journal.py",
+    "sha256_before": "b9425cca77c6bc5c40bac238849e23ff5617bdf8eda304fccdb215f11a306045"
+  },
+  {
+    "source": "apps/trade_log/load_qsqh_orders.py",
+    "target": "data_providers/jobs/trades/load_qsqh_orders.py",
+    "sha256_before": "4d0cc97f2c216549590cedd04a93895d52c81de49c73329151ae0d4cfc6be9d4"
+  },
+  {
+    "source": "apps/trade_log/load_schwab_account.py",
+    "target": "data_providers/jobs/trades/load_schwab_account.py",
+    "sha256_before": "e667a8f6f594f70a4f179c28dede59054064687fdc49e04345b8da7109757d6c"
+  },
+  {
+    "source": "apps/trade_log/load_schwab_csv.py",
+    "target": "data_providers/jobs/trades/load_schwab_csv.py",
+    "sha256_before": "1f74d0f17cc15953faab221a7c67591a19c2f39147264ca00b1506cd0d085b9d"
+  },
+  {
+    "source": "apps/trade_log/load_schwab_orders.py",
+    "target": "data_providers/jobs/trades/load_schwab_orders.py",
+    "sha256_before": "2f13df4a96f8183d3f4421ad24e8d11799f55c6cdd51bb66bb54c51902e9c9cc"
+  },
+  {
+    "source": "apps/trade_log/load_schwab_transactions.py",
+    "target": "data_providers/jobs/trades/load_schwab_transactions.py",
+    "sha256_before": "dcf5f1eea06520e3af10b97fcd9be6df4f04bfff6432e9c0bb88c34b31d1adfd"
+  },
+  {
+    "source": "apps/trade_log/parse_log.py",
+    "target": "data_providers/jobs/trades/parse_log.py",
+    "sha256_before": "3123a01804a8302952e53c805da42a49d56d546a1f5e00f440c76aaa1509721b"
+  },
+  {
+    "source": "apps/trade_log/position_costs.py",
+    "target": "data_providers/jobs/trades/position_costs.py",
+    "sha256_before": "fa03f80e5c561df59da758ef067795b5fe6ea318b1f47bbcb2e29488402375dc"
+  },
+  {
+    "source": "apps/trade_log/reconcile_fills.py",
+    "target": "data_providers/jobs/trades/reconcile_fills.py",
+    "sha256_before": "5cca44444720c6a7b1b99a8cdaf0d97ae829ced6aa232c7c803a3390e5b01ea0"
+  },
+  {
+    "source": "apps/trade_log/record_trade.py",
+    "target": "data_providers/jobs/trades/record_trade.py",
+    "sha256_before": "16e7a79820489108b241fefbea5a9978e11ff4a9dd3330d14d32f8927b11bc21"
+  },
+  {
+    "source": "apps/trade_log/record_trade_cn.py",
+    "target": "data_providers/jobs/trades/record_trade_cn.py",
+    "sha256_before": "cbc94d9de0664ac42272e6636d1c97552c242a2402ed8194ec3e29d88e04e138"
+  },
+  {
+    "source": "apps/trade_log/schwab_account_book.py",
+    "target": "data_providers/jobs/trades/schwab_account_book.py",
+    "sha256_before": "656e54d025e1a26dcd43a87ff6bc6257690c68e2f48392bdbb04669a9a7cb8ef"
+  },
+  {
+    "source": "apps/trade_log/schwab_account_parse.py",
+    "target": "data_providers/jobs/trades/schwab_account_parse.py",
+    "sha256_before": "2b784ca9f86a988e4897e03da162d9e4d8676a3065a5036aa205b42b38db9cc6"
+  },
+  {
+    "source": "apps/trade_log/schwab_clock.py",
+    "target": "data_providers/jobs/trades/schwab_clock.py",
+    "sha256_before": "b9a4a0283b49b458eb500fdbbc114cb96fdceba413f3ee335f82317c47d3ef0d"
+  },
+  {
+    "source": "apps/trade_log/schwab_clock_batch.py",
+    "target": "data_providers/jobs/trades/schwab_clock_batch.py",
+    "sha256_before": "0992e55bbef749cf94ddd4424b8431facaddae5f728e54d5e143283f08c357d3"
+  },
+  {
+    "source": "apps/trade_log/schwab_report.py",
+    "target": "data_providers/jobs/trades/schwab_report.py",
+    "sha256_before": "15d7a23f1cd5cf9c0e863a1f4bd7e143bb815a18a6797bc062d3edf78e61efdf"
+  },
+  {
+    "source": "apps/trade_log/schwab_statement.py",
+    "target": "data_providers/jobs/trades/schwab_statement.py",
+    "sha256_before": "fa97f7c03ebc9fffcf6b6e5a3a1edcead1a86fa477428d777da0b0c9a918d2bf"
+  },
+  {
+    "source": "apps/trade_log/schwab_writes.py",
+    "target": "data_providers/jobs/trades/schwab_writes.py",
+    "sha256_before": "28bafda23400554737b266ffd01ebc5eb25f137d1900302f19364d4267ee60f8"
+  },
+  {
+    "source": "apps/trade_log/seed_cboe.py",
+    "target": "data_providers/jobs/trades/seed_cboe.py",
+    "sha256_before": "d0c51d6172b5bac1b0b696125fb8cae6b91ca762150d1d008f61502c105cb898"
+  },
+  {
+    "source": "apps/trade_log/seed_fills.py",
+    "target": "data_providers/jobs/trades/seed_fills.py",
+    "sha256_before": "f9d53f11b5ed8165efc50c168da972785a0d8eafb05311c44200831aea227f1b"
+  },
+  {
+    "source": "apps/trade_log/snapshot_chain.py",
+    "target": "data_providers/jobs/trades/snapshot_chain.py",
+    "sha256_before": "766ca682db2134ddce9d53ce53656ada858238fa8fb3ef678b31f56779d51f05"
+  },
+  {
+    "source": "apps/trade_log/source_dirs.py",
+    "target": "data_providers/jobs/trades/source_dirs.py",
+    "sha256_before": "a6df3c11681103df64c59c4fa9136c7b9da34df61196b842ea1acc2b4e3577b3"
+  },
+  {
+    "source": "apps/trade_log/spots_from_archive.py",
+    "target": "data_providers/jobs/trades/spots_from_archive.py",
+    "sha256_before": "23e51601d3a8aac63090c15c85a2fa2ee3dce5186023aef8222cce96da39ffa9"
+  },
+  {
+    "source": "compute/bs.py",
+    "target": "data_providers/compute/bs.py",
+    "sha256_before": "ec8fd38cc735cd234a304bbf67d3a55668935233c4f1343fa2f956d80382c42f"
+  },
+  {
+    "source": "data/clock.py",
+    "target": "data_providers/data/clock.py",
+    "sha256_before": "0359285e7470233e83f8112128f20a63e6e67ec9bba118f5dbc3c02c1375c7c1"
+  },
+  {
+    "source": "data/db.py",
+    "target": "data_providers/data/db.py",
+    "sha256_before": "736b46874a8c6f8e04e8bdf364a5bbef23cdfa66b4a05b076dc68345f246df75"
+  },
+  {
+    "source": "data/schema/__init__.py",
+    "target": "data_providers/data/schema/__init__.py",
+    "sha256_before": "154d4952c34474ad4f254e6d754a605367ba25c47bd87b8f0ce2fa074b9bc345"
+  },
+  {
+    "source": "data/schema/broker_costs.py",
+    "target": "data_providers/data/schema/broker_costs.py",
+    "sha256_before": "2c812f4debba5942ac1dd4d6ec133d151f5fa2a006ad5319df0b288b05787181"
+  },
+  {
+    "source": "data/schema/cn.py",
+    "target": "data_providers/data/schema/cn.py",
+    "sha256_before": "ef5b58d26976b7c27bf985d763ff5931ba0183245e8e9fbc42437da1d79bf319"
+  },
+  {
+    "source": "data/schema/cn_products.py",
+    "target": "data_providers/data/schema/cn_products.py",
+    "sha256_before": "96fd637236c5a0f1e521ada9b0bd72144fb51f8725a6b2d5e23470eb2c60b449"
+  },
+  {
+    "source": "data/schema/history.py",
+    "target": "data_providers/data/schema/history.py",
+    "sha256_before": "a27cf24361312de29e6f746004b9fb24dc8b36a434e59c73b8e948a53b6df727"
+  },
+  {
+    "source": "data/schema/log.py",
+    "target": "data_providers/data/schema/log.py",
+    "sha256_before": "38766c5f1d7d616f69f56b195b5456260e3ba70314661b01a1614f7998f7e506"
+  },
+  {
+    "source": "data/schema/reference.py",
+    "target": "data_providers/data/schema/reference.py",
+    "sha256_before": "9895757e471d49f08895cbffab406d6ac14d2740f47751702e8a47ba56a8337f"
+  },
+  {
+    "source": "data/schema/risk_snapshots.py",
+    "target": "data_providers/data/schema/risk_snapshots.py",
+    "sha256_before": "e1149eedb67414aa1ef8d981b8db6d3dacc29bada12599fb272604bc7076df40"
+  },
+  {
+    "source": "data/staging/__init__.py",
+    "target": "data_providers/data/staging/__init__.py",
+    "sha256_before": "4c6f33f327077e471f61b3601a25afd882117fb91f7b832b8037e10396eb6642"
+  },
+  {
+    "source": "data/staging/download_guard.py",
+    "target": "data_providers/data/staging/download_guard.py",
+    "sha256_before": "229a616de926adf2ed052f8a78e6435392a44215694311d5640e11604f3613aa"
+  },
+  {
+    "source": "data/staging/merge_staging.py",
+    "target": "data_providers/data/staging/merge_staging.py",
+    "sha256_before": "f121d8df4ca9808f6a2c94cbba1384010e13da607c863b75e9d1c14719784c99"
+  },
+  {
+    "source": "data/symbols.py",
+    "target": "data_providers/data/symbols.py",
+    "sha256_before": "2f75b2f30aa7310a549be4dbd734ef36d425dca4b070a7549d6485c5954e7eac"
+  },
+  {
+    "source": "datasources/alpaca_http.py",
+    "target": "data_providers/providers/alpaca_http.py",
+    "sha256_before": "3bab7ed0089365935f5c88782ff98581007618e053f6d46561c7c52362dc01cb"
+  },
+  {
+    "source": "datasources/ibmarks.py",
+    "target": "data_providers/providers/ibmarks.py",
+    "sha256_before": "6031ea839a483b2d6f9b0ac3ed178956ea91b2fb31d31f3224041d481a7a7596"
+  },
+  {
+    "source": "datasources/massive.py",
+    "target": "data_providers/providers/massive.py",
+    "sha256_before": "9326d96c522fc70af4155cb86794d9eac66ea52eff1359d065e7e3acc6290bd6"
+  },
+  {
+    "source": "datasources/nasdaq.py",
+    "target": "data_providers/providers/nasdaq.py",
+    "sha256_before": "827d7a8418eae6c5df117f30e2880074410a621ab50afa131e98bd10de0bdf63"
+  },
+  {
+    "source": "datasources/source_rank.py",
+    "target": "data_providers/providers/source_rank.py",
+    "sha256_before": "3adbc6f797a408d1caeb2d29a344bcc12d95748ab16511e4b13a07812774ffe8"
+  },
+  {
+    "source": "datasources/thetadata.py",
+    "target": "data_providers/providers/thetadata.py",
+    "sha256_before": "ab052a542d775f7e5e819b6cfa53bdef1a3268bd374b3edfec94c6f38df26e6b"
+  },
+  {
+    "source": "datasources/tws.py",
+    "target": "data_providers/providers/tws.py",
+    "sha256_before": "f4aba69f41dc2ed0726f2d53c922edb1e0ea2954585e9d8edb9ec61be5f289d6"
+  },
+  {
+    "source": "datasources/yahoo_session.py",
+    "target": "data_providers/providers/yahoo_session.py",
+    "sha256_before": "bb96f18696ff6528f31f9c71c604aa0618c8287c50dbb6c85095eec212f15c0f"
+  },
+  {
+    "source": "market_data/scripts/10_fetch_sources.py",
+    "target": "data_providers/warehouse/10_fetch_sources.py",
+    "sha256_before": "71b632e23965c18e5416c35a75a16486270efb7a768fdd7efbb88c1962b8d16c"
+  },
+  {
+    "source": "market_data/scripts/15_fetch_etf_liquidity.py",
+    "target": "data_providers/warehouse/15_fetch_etf_liquidity.py",
+    "sha256_before": "eef3e0d6fb583572954bdf17943fac22bec6c3d226e29d73aec782e17aca4ddc"
+  },
+  {
+    "source": "market_data/scripts/20_build_membership.py",
+    "target": "data_providers/warehouse/20_build_membership.py",
+    "sha256_before": "e667b7f1ced0bc956a69ddf4fb634e7ba29d67137d5a23ddcc9d552de3f51f05"
+  },
+  {
+    "source": "market_data/scripts/21_reconcile_russell.py",
+    "target": "data_providers/warehouse/21_reconcile_russell.py",
+    "sha256_before": "377372df1b31fe4774d7a17b356115b48e68b63c7fb204c47f918b8948a81618"
+  },
+  {
+    "source": "market_data/scripts/22_resolve_russell_overlap.py",
+    "target": "data_providers/warehouse/22_resolve_russell_overlap.py",
+    "sha256_before": "6d1d535956db1b6fea7338034d3202aad99a361da3037de12d6e104f5bd5e09c"
+  },
+  {
+    "source": "market_data/scripts/25_merge_external_lists.py",
+    "target": "data_providers/warehouse/25_merge_external_lists.py",
+    "sha256_before": "dae3a5a4c3c4267f41eaecf40d6d0a196b80bf05f16b527ce99ab6722b2cbe4c"
+  },
+  {
+    "source": "market_data/scripts/30_download_missing.py",
+    "target": "data_providers/warehouse/30_download_missing.py",
+    "sha256_before": "6f5b630fcdad6ccd001323b6e54bc1c69491d64eb8b6241bca776d30dc37f577"
+  },
+  {
+    "source": "market_data/scripts/35_refresh_tail.py",
+    "target": "data_providers/warehouse/35_refresh_tail.py",
+    "sha256_before": "eb935e2739801ae7d740f082228fc0c23dd8f48ce1da295bbe32ea653d5e5481"
+  },
+  {
+    "source": "market_data/scripts/35b_refresh_tail_nasdaq.py",
+    "target": "data_providers/warehouse/35b_refresh_tail_nasdaq.py",
+    "sha256_before": "6438b0e9f31cc75fd135eaa53890982e59462cefe53b42f9c90db0ca1e37dd7a"
+  },
+  {
+    "source": "market_data/scripts/36_refetch_symbols.py",
+    "target": "data_providers/warehouse/36_refetch_symbols.py",
+    "sha256_before": "ccb555af003d68193efe893f5ba4b739962a0d353b277c493b673af17db2210f"
+  },
+  {
+    "source": "market_data/scripts/37_fetch_actions.py",
+    "target": "data_providers/warehouse/37_fetch_actions.py",
+    "sha256_before": "be93544a40e4521d4437e9380f7cbe19ef144b4eefe614218fb294c362dab4e6"
+  },
+  {
+    "source": "market_data/scripts/38_trim_zero_rows.py",
+    "target": "data_providers/warehouse/38_trim_zero_rows.py",
+    "sha256_before": "dff8a89af2901709efaa316c6a684ad68e32f247399d5655d66004087befdffd"
+  },
+  {
+    "source": "market_data/scripts/39_drop_inconsistent_rows.py",
+    "target": "data_providers/warehouse/39_drop_inconsistent_rows.py",
+    "sha256_before": "4de4fbf2f3e7ba69193ac3051a5b574a9f6c540c3b7f6ebe8e9857d7ef0fc27a"
+  },
+  {
+    "source": "market_data/scripts/40_fetch_spare.py",
+    "target": "data_providers/warehouse/40_fetch_spare.py",
+    "sha256_before": "08134d53650109ae4d734320315a6e4cd324e98fa921859a3b746709ea9d1cdc"
+  },
+  {
+    "source": "market_data/scripts/45_repair_truncated.py",
+    "target": "data_providers/warehouse/45_repair_truncated.py",
+    "sha256_before": "76cad23a4fc11fcb4b22eadb7b850b90fe149e3f8ec7337c1c822dc2fb5c03d4"
+  },
+  {
+    "source": "market_data/scripts/50_checklist.py",
+    "target": "data_providers/warehouse/50_checklist.py",
+    "sha256_before": "9b71f7cb2e118b73700f234e64ce7eb8485c397063c16f5e5c2d4440138441f8"
+  },
+  {
+    "source": "market_data/scripts/60_build_database.py",
+    "target": "data_providers/warehouse/60_build_database.py",
+    "sha256_before": "0a7f5cbe7da6bbd12634e422c99230dd316b5d6984972840e5cf39b7a86a2a17"
+  },
+  {
+    "source": "market_data/scripts/70_export.py",
+    "target": "data_providers/warehouse/70_export.py",
+    "sha256_before": "892a8d0fc60c9ad04cdae3f5c6624a267a7db36ef1d459d07fd4129a51f88dd1"
+  },
+  {
+    "source": "market_data/scripts/80_crosscheck.py",
+    "target": "data_providers/warehouse/80_crosscheck.py",
+    "sha256_before": "e61f4abc1fbbcf0950fabe61f29de2044ba7e64d35efc63aa31ef49458cbafe1"
+  },
+  {
+    "source": "market_data/scripts/90_extract_edgar_holdings.py",
+    "target": "data_providers/warehouse/90_extract_edgar_holdings.py",
+    "sha256_before": "31b895f07859aeefd8c00329fc34d55c5e949bd0e05064cd70bb7867bc537aed"
+  },
+  {
+    "source": "market_data/scripts/95_compare_sources.py",
+    "target": "data_providers/warehouse/95_compare_sources.py",
+    "sha256_before": "f61a90a34458ab9b017b7f89413979d38af842b80feb7d4fd72ee5532bea7a26"
+  },
+  {
+    "source": "market_data/scripts/96_verify_prices.py",
+    "target": "data_providers/warehouse/96_verify_prices.py",
+    "sha256_before": "dd8dc70fbe54a17bf3a7afa36a07729e794e3d3829774482c2eed6459f1b9eee"
+  },
+  {
+    "source": "market_data/scripts/config.py",
+    "target": "data_providers/warehouse/config.py",
+    "sha256_before": "32b954f3cf4f9f78e70ca886659e970bae3e2ba1712296bb1d40fecd0996fdba"
+  },
+  {
+    "source": "market_data/scripts/djia_names.py",
+    "target": "data_providers/warehouse/djia_names.py",
+    "sha256_before": "30f84117fc511651fa29eb2957e8231ae8c674fd3b0c0dd2e4784dc85ade9eec"
+  },
+  {
+    "source": "market_data/scripts/etf_liquidity.py",
+    "target": "data_providers/warehouse/etf_liquidity.py",
+    "sha256_before": "3aae5e860729b6bbd96bd2d9ec10b74317e519e1a57af3154dd116e41dfa4452"
+  },
+  {
+    "source": "market_data/scripts/helpguard.py",
+    "target": "data_providers/warehouse/helpguard.py",
+    "sha256_before": "7f4e97ebb994e9b5f4c20172abf31b2ec03a039ec585974ad587e8a731b2833d"
+  },
+  {
+    "source": "market_data/scripts/price_csv.py",
+    "target": "data_providers/warehouse/price_csv.py",
+    "sha256_before": "e93f13055908ba059a14ce7dcaf89fb03298d06ea53bd622b20b5a0c3bc33c23"
+  },
+  {
+    "source": "shared/files.py",
+    "target": "data_providers/shared/files.py",
+    "sha256_before": "256eeaa5fe63f31b6d8c8df9adc6336f61ae22d043ebfd8f6820d46cde3d6650"
+  },
+  {
+    "source": "shared/helpguard.py",
+    "target": "data_providers/shared/helpguard.py",
+    "sha256_before": "07c442d2aec1883c2c67b1e3db42b6159159b86d9f9f289d5462466f7b9e9df7"
+  },
+  {
+    "source": "shared/net.py",
+    "target": "data_providers/shared/net.py",
+    "sha256_before": "0e9494a4badba96db991f81e556b082bd02a6ebecfe65f6af2403ca87288ffd3"
+  },
+  {
+    "source": "shared/progress.py",
+    "target": "data_providers/shared/progress.py",
+    "sha256_before": "2bbe8d0ed6afb81a7e5e62c59427f20cbe5df7eba9e1f48f5ecfc07f874121d9"
+  },
+  {
+    "source": "shared/ratelimit.py",
+    "target": "data_providers/shared/ratelimit.py",
+    "sha256_before": "37691ecd0990ae1773ffd94a505c13bc16f6a25d61173616aaa85ab560c1f68f"
+  },
+  {
+    "source": "shared/rates.py",
+    "target": "data_providers/shared/rates.py",
+    "sha256_before": "c3f31b15d9e992617d12d92e261c0ed9b7b88601930bd4d21eece31a3db5721e"
+  }
+]

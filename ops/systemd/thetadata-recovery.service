@@ -1,0 +1,11 @@
+[Unit]
+Description=Ensure configured ThetaData terminal is available
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/vic/data_providers
+ExecStart=/usr/bin/flock --close -n /home/vic/data_providers/runtime/var/theta-recovery.lock /home/vic/data_providers/scripts/ensure_thetadata.sh
+TimeoutStartSec=300
+KillMode=process

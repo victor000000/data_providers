@@ -1,0 +1,4 @@
+# Copy to config.local.toml, or set DATA_PROVIDERS_HOME.
+# Relative paths resolve against this configuration file.
+[storage]
+home = "./runtime"
