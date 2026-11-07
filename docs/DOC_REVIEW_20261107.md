@@ -68,3 +68,18 @@ the publication owner must establish the actual final branch and exact-SHA CI re
 Local verification results are recorded separately from that final acceptance.
 
 Local command outcomes: [verification record](validation/docs-audit-20261107/checks.json).
+
+
+## Second final review
+
+A second review found the catalog gate could detect missing/currently changed rows
+but allowed an extra obsolete dataset row when all real rows were also present.
+The gate now checks the bounded catalog-mapping section for stale/mismatched and
+duplicate rows as well; a regression demonstrates rejection of both cases.
+The publication manifest was also expanded from the documentation-only delta to
+all task changes since the verified published source baseline, with explicit
+native-only dispositions. These corrections prevent silently incomplete handoffs.
+
+The original inventory remains the initial audit snapshot at publication-source
+commit 2da35e5. [Second-review evidence](validation/docs-audit-20261107/second-review.json)
+records this follow-up without rewriting the earlier check results.

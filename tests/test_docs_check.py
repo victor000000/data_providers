@@ -31,3 +31,13 @@ def test_all_current_catalog_contracts_and_versions_match_documentation():
     result = docs.check(root)
     assert result['errors'] == []
     assert result['catalog_rows'] > 0
+
+
+def test_stale_catalog_rows_are_rejected_even_when_all_real_rows_exist():
+    row = '| `us_daily` | `underlying_daily` | `day` | `symbol` | no |'
+    ghost = '| `obsolete_dataset` | `old_table` | `day` | `symbol` | no |'
+    reference = '## Catalog mapping\n' + row + '\n## Choosing a dataset\n'
+    assert docs.catalog_errors(reference, [row]) == []
+    errors = docs.catalog_errors(reference.replace(row, row + '\n' + ghost), [row])
+    assert len(errors) == 1 and 'stale or mismatched' in errors[0]
+    assert docs.catalog_errors(reference.replace(row, row + '\n' + row), [row])

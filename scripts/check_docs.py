@@ -70,14 +70,26 @@ def catalog_rows(root):
     return rows
 
 
+def catalog_errors(reference, rows):
+    errors = []
+    if '## Catalog mapping' not in reference or '## Choosing a dataset' not in reference:
+        return ['DATASETS.md lacks catalog mapping boundaries']
+    section = reference.split('## Catalog mapping', 1)[1].split('## Choosing a dataset', 1)[0]
+    documented = [line.strip() for line in section.splitlines() if line.startswith('| `')]
+    for row in rows:
+        if documented.count(row) != 1:
+            errors.append(f'DATASETS.md requires exactly one catalog row: {row}')
+    for row in sorted(set(documented) - set(rows)):
+        errors.append(f'DATASETS.md has a stale or mismatched catalog row: {row}')
+    return errors
+
+
 def check(root, cli=False):
     paths = canonical(root)
     errors = check_links(root, paths)
     datasets = (root / 'docs/DATASETS.md').read_text()
     rows = catalog_rows(root)
-    for row in rows:
-        if datasets.count(row) != 1:
-            errors.append(f'DATASETS.md requires exactly one catalog row: {row}')
+    errors.extend(catalog_errors(datasets, rows))
     project = tomllib.loads((root / 'pyproject.toml').read_text())['project']
     init = ast.parse((root / 'data_providers/__init__.py').read_text())
     version = next(ast.literal_eval(n.value) for n in init.body if isinstance(n, ast.Assign)

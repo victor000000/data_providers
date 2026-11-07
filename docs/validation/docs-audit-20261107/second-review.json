@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-07",
+  "finding": "Gate accepted obsolete extra catalog rows despite claiming exact catalog mapping",
+  "fix": "Validate bounded catalog mapping section; reject stale/mismatched and duplicate rows",
+  "full_suite": "688 passed; 28 subtests; two dependency warnings",
+  "focused_docs_tests": "4 passed",
+  "lint": "passed",
+  "docs_gate": "passed; all CLI help against absent temporary runtime",
+  "source_sha256": {
+    "scripts/check_docs.py": "3e08a4d21fad7fd6c44d1c8f6ce582168d21f8ccab00cfe0976f620b19359520",
+    "tests/test_docs_check.py": "82bacd1345482968dfa2cfb96e2f36b47bcfe6c5ba1256e303651ba77015cff5",
+    "docs/DOC_REVIEW_20261107.md": "b2f7fff002cb914adda443e6a454f03625351a33b1da08e8494aca8048b8aef3"
+  },
+  "previous_publication": {
+    "remote_sha": "2f24182734c5208f4186782b27fcef7da9e51aed",
+    "local_source": "2da35e5882b0d29d10fb2a687078b07bcdefd04f",
+    "tree": "5aea1a0dbcbe7debd5d1c1ab37f74ab8b4a014a5",
+    "ci_run": 42369775100,
+    "ci_status": "success for previous tree only"
+  },
+  "acceptance": "follow-up tree requires separate serialized publication and exact-SHA CI; earlier success does not cover this correction"
+}
