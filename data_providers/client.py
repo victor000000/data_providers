@@ -71,6 +71,11 @@ class MarketData:
         finally:
             con.close()
 
+    def readiness(self, contract):
+        """Assess exact daily presence; see docs/READINESS.md for evidence limits."""
+        from .readiness import assess
+        return assess(self, contract)
+
     def status(self, dataset):
         spec = self._spec(dataset)
         if self.release:

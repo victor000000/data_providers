@@ -15,6 +15,8 @@ def main(argv=None):
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("init", help="Initialize schemas and seed configuration in the runtime directory")
     commands.add_parser("datasets")
+    p = commands.add_parser("readiness", help="Assess an explicit daily presence contract")
+    p.add_argument("contract", help="Readiness v1 JSON file")
     for command in ("schema", "status"):
         p = commands.add_parser(command)
         p.add_argument("dataset")
@@ -63,6 +65,9 @@ def main(argv=None):
         elif args.command == "init":
             from .initialize import initialize
             result = {"home": str(initialize(client.home)), "status": "initialized"}
+        elif args.command == "readiness":
+            with open(args.contract, encoding="utf-8") as handle:
+                result = client.readiness(json.load(handle))
         elif args.command == "datasets":
             result = client.datasets()
         elif args.command in {"schema", "status"}:

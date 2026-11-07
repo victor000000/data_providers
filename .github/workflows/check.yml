@@ -13,5 +13,21 @@ jobs:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
       - run: make setup
-      - run: make test
+      - name: Check readiness code
+        run: ./scripts/native.sh python -m ruff check --no-cache data_providers/readiness.py tests/test_readiness.py
+      - name: Run full isolated unit suite
+        run: make test
+        env:
+          PYTEST_ADDOPTS: --junitxml=test-results/unit.xml
       - run: make build
+      - name: Retain unit results and distributions
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-results-and-distributions
+          path: |
+            test-results/unit.xml
+            dist/*.whl
+            dist/*.tar.gz
+          if-no-files-found: warn
+          retention-days: 14

@@ -19,6 +19,8 @@ expansion was reviewed against local code on 2026-10-31 without running acquisit
 | Verify a change or delivery | [Validation](VALIDATION.md) | [Development](DEVELOPMENT.md), pinned release and inclusion receipts |
 | Resolve a consumer requirement or formula | [Requirements index](requirements/README.md) | Relevant dated request and delivery evidence |
 
+Read-only daily coverage: [Readiness assessment](READINESS.md). Next release: [v0.2 design and self-review](V02_DESIGN.md).
+
 ## Guide catalog
 
 | Guide | Responsibility |

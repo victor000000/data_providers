@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "recorded_at": "2026-11-07T10:54:20.088058+00:00",
+  "project_version": "0.2.0.dev0",
+  "scope": "software checks only; no live data delivery proof",
+  "checks": {
+    "full_suite": "699 passed; 28 subtests; before final UTC test addition",
+    "focused_suite": "..............                                                           [100%]\n14 passed in 0.85s",
+    "lint": "All checks passed!",
+    "build": "wheel and source distribution succeeded"
+  },
+  "source_sha256": {
+    "data_providers/readiness.py": "e78c0f989ec72aa8774532a5a896fb4cd9ef9b1fe8fb1114f5769062781da9aa",
+    "data_providers/client.py": "1e30ed8193e1b579788c1e02265b03a59cee8c944d81afce2363a58a633e34ba",
+    "data_providers/cli.py": "3df2bddc0a7b2105f2f3b19f59789741bc319e552175a2ec2eab7f06c1516226",
+    "data_providers/__init__.py": "4ef09d3ac27a189ab8df81583e6fb727c3a926f838d251a1d82ed9d0b03e2fd9",
+    "tests/test_readiness.py": "1b487d9f0c3b333cd770478b6754abb1cd4aaa7b01b0c2ad7c139add8146951c",
+    "pyproject.toml": "921d631502e0735b203d9528aef5df9c06c86c7456223f6266fb896337fee10c",
+    "uv.lock": "f54bbedefaba872bbf6e8e3f2354f15a63f6767c7956c9fcf6db656d9762ec37",
+    "docs/README.md": "24dbe0b97f706ee13dafb22a5305ca3e42dfa96b6b4128bb3202992fa61cb7b6",
+    "docs/READINESS.md": "9f5b03affcc89f2c200793a9f821e88242a97aced9e80778006b912e841eeed6",
+    "docs/V02_DESIGN.md": "b71e72b927e5f638501f526ac2f7e18bea322eeba9af52aa486531fdaa03f092"
+  },
+  "evidence_sha256": {
+    "focused-tests.log": "55e32d29d7e8cd2e4eb27f7ec4a4245290b2b00c38a5574dffe268bfe97303a6",
+    "lint.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "full-tests.log": "f0382886c7545d6a9d37f47f5b8af58ac7a74ef9f5295705c0a82b7fa3658cf5",
+    "build.log": "8dcd91c537c7de6b4d7a11d39f8b3b0a97fb60e86531922100ad77f4d743ba83"
+  },
+  "publication": {
+    "base": "7d1c417908347ef4d4f274546481f5f67de210c7",
+    "branch": "codex/v02-readiness",
+    "full_tests": "684 passed; 28 subtests; 2 dependency warnings",
+    "build": "wheel and source distribution succeeded",
+    "source_sha256": {
+      "data_providers/readiness.py": "e78c0f989ec72aa8774532a5a896fb4cd9ef9b1fe8fb1114f5769062781da9aa",
+      "data_providers/client.py": "9df835fb230f6eaee3e30cbcf198f48083f5a0961db8c1c154ab70c674b07475",
+      "data_providers/cli.py": "3df2bddc0a7b2105f2f3b19f59789741bc319e552175a2ec2eab7f06c1516226",
+      "data_providers/__init__.py": "4ef09d3ac27a189ab8df81583e6fb727c3a926f838d251a1d82ed9d0b03e2fd9",
+      "tests/test_readiness.py": "5efd83907d852a1943db5159390e5432ff8d38a16bc570574e83b9f6e297b7bf",
+      "pyproject.toml": "921d631502e0735b203d9528aef5df9c06c86c7456223f6266fb896337fee10c",
+      "uv.lock": "f54bbedefaba872bbf6e8e3f2354f15a63f6767c7956c9fcf6db656d9762ec37",
+      "docs/README.md": "24dbe0b97f706ee13dafb22a5305ca3e42dfa96b6b4128bb3202992fa61cb7b6",
+      "docs/READINESS.md": "9f5b03affcc89f2c200793a9f821e88242a97aced9e80778006b912e841eeed6",
+      "docs/V02_DESIGN.md": "54ecacd3887fd1d9aa2bd3fa150d424780c51325af86d83a16f8aab9429e8d81",
+      ".github/workflows/check.yml": "3b3867f596d5b1f1008c20a0513857ad12393adf907cf33632cd20e88d087db5"
+    },
+    "evidence_sha256": {
+      "publication-build.log": "c62b3ee843d70c0454bd7ad80db0fc565628e82de4c3d2434122510efb0b37d8",
+      "publication-tests.log": "373447d04d9ffe69a965e08bd9445b9aa069acdfafd48ab412df65d13c581c08"
+    }
+  },
+  "clean_checkout": {
+    "implementation_commit": "17486f4a9ec1f96919cbd6ca5dc5e7c1aec69483",
+    "setup": "make setup succeeded in fresh native environment",
+    "tests": "684 passed, 28 subtests, 2 warnings",
+    "lint": "passed",
+    "build": "wheel and sdist succeeded",
+    "local_evidence_sha256": {
+      "clean-setup.log": "8042ec6b3921cf5d831dc6c78abe7d495c088cf62787ead97225e864f752a75a",
+      "clean-tests.log": "6eac87eb721d7053f162f0553a0f4c939e6538cf886c4f3fd7d395e0faf6a98a",
+      "clean-build.log": "41dff8a0007f7486a4c42f3ac20f80fa222244e5f33c190686eed9d3c479f1ec",
+      "clean-unit.xml": "ed266f0ab444844fcc1d5e98719aef3ee49d19562f474b615a3756bbc46436bc"
+    }
+  },
+  "publication_status": {
+    "pushed": false,
+    "hosted_ci": "not run; write authentication unavailable",
+    "remote_main": "7d1c417908347ef4d4f274546481f5f67de210c7",
+    "blockers": [
+      "Configured noninteractive Git credential helper inaccessible; no credentials supplied",
+      "GitHub connector create-tree returned HTTP 403 Resource not accessible by integration"
+    ]
+  }
+}
