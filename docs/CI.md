@@ -1,30 +1,38 @@
 # Continuous integration
 
-The `Shared data checks` GitHub Actions workflow runs on pushes, pull requests,
-and manual dispatch. It uses read-only repository permissions and a bounded
-Ubuntu job to run the same native commands used locally:
+[Shared data checks](../.github/workflows/check.yml) runs on push, pull request and
+manual dispatch in a bounded Ubuntu job with read-only repository permissions.
+Its clean-checkout sequence is:
 
 ```bash
 make setup
+make docs-check
+./scripts/native.sh python -m ruff check --no-cache data_providers/readiness.py tests/test_readiness.py scripts/check_docs.py tests/test_docs_check.py
 make test
 make build
 ```
 
-Setup installs the locked dependencies into `.venv-native` with a private Python.
-Tests redirect `DATA_PROVIDERS_HOME` to a temporary directory through
-`tests/conftest.py`. They do not require provider credentials, a broker terminal,
-market downloads, or live trading services. Package builds produce a wheel and
-source distribution under `dist/`.
+Setup uses the committed lock, all source/analysis/dev extras, `.venv-native` and
+private Python 3.14. The metadata minimum >=3.11 is not an additional CI matrix.
+Tests select an isolated temporary runtime in tests/conftest.py. They require no
+provider credentials, broker terminal, market downloads or live trading services.
+Documentation checks parse every shared CLI command's help with an absent temporary
+runtime, compare catalog/version contracts and check portable canonical links.
 
-These checks cover isolated code behavior and packaging. They do not certify
-provider entitlements, live network routes, data freshness, or production delivery.
-Those require the separate operational evidence described in `OPERATIONS.md`.
+The workflow supplies PYTEST_ADDOPTS=--junitxml=test-results/unit.xml for the full
+suite. An always-running upload step retains that XML and any built dist/*.whl
+and dist/*.tar.gz for 14 days. Failed setup may leave no results; an absent artifact
+is not a passing test run. Do not upload runtime stores, private config, credentials,
+raw receipts or account data. Documentation checker scope and exclusions are in
+[the audit](DOC_REVIEW_20261107.md#checks-and-limits).
 
-Continuous deployment is not configured: this repository has no declared
-deployment target or package-release credentials. The workflow does not deploy,
-publish a package, restart a service, or perform market-data maintenance.
+Continuous deployment/package publication is not configured. The workflow does
+not restart services, submit orders, perform acquisition or publish a data-lake
+release. CI success establishes tested code and packaging only; see
+[Validation](VALIDATION.md) for evidence boundaries and [Operations](OPERATIONS.md)
+for independently authorized recovery.
 
-The public source snapshot excludes private runtime/configuration and operational
-data. Broker account identifiers in trading-log helpers are placeholders and must
-be configured for a deployment. Credentials belong in private local storage,
-never in this repository or its workflow logs.
+Acceptance must match the final source SHA and a terminal hosted run. Local commands,
+an older baseline run or an unpushed commit cannot establish that result. Serialized
+publication belongs to the existing coordinator/publisher; see
+[Development](DEVELOPMENT.md#ci-and-release-review) and [Evidence access](EVIDENCE.md).

@@ -1,7 +1,7 @@
 # Market-data maintenance
 
 Scope: US and mainland CN PV/listed options plus supporting reference data and
-independent broker/journal maintenance. See [active scope](requirements/MARKET_DATA_SCOPE_20261019.json).
+independent broker/journal maintenance. See active scope (private path `docs/requirements/MARKET_DATA_SCOPE_20261019.json`; [access boundaries](EVIDENCE.md#private-evidence)).
 Before executing, inspect [Operations](OPERATIONS.md) for active workers and saved
 checkpoints. Commands below run on the host using the [native environment](NATIVE.md).
 
@@ -99,6 +99,17 @@ Coverage and failures are available in `futures_ingestion_checks` and
 Publication validates data integrity; it does not imply complete upstream coverage.
 A failed supervised run does not automatically publish. After recovery and audits,
 `data-providers --private lake publish` explicitly publishes the verified available state.
+
+## Plans, receipts and readiness
+
+`maintain` is a plan preview until --execute is present; --publish alone does not
+rescan inputs or deliver data. Preview does not establish source freshness.
+The six-hour step timeout and group failure rules are documented in
+[CLI reference](CLI_REFERENCE.md#maintenance-planning-and-execution).
+Readiness v1 is a separate read-only assessment, not a recovery allocator and not
+permission to replay failed keys. A missing session does not identify which
+provider is legally/technically eligible to acquire it. Preserve existing queues,
+claims, slots and finalizers when preparing any source-specific allocation.
 
 ## Source limits
 

@@ -1,7 +1,7 @@
 # Source-qualified US/CN daily calculation graph
 
 This page preserves dated delivery/method evidence. For current acquisition scope,
-see [requirements](requirements/README.md); for live status, see
+see requirements (private path `docs/requirements/README.md`; [access boundaries](EVIDENCE.md#private-evidence)); for live status, see
 [Operations](OPERATIONS.md). Counts and “current” results below refer to their
 recorded run, not a continuously refreshed coverage claim.
 

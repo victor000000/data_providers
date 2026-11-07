@@ -144,6 +144,29 @@ column/date filtering can use DuckDB's Parquet projection and filter pushdown.
 See [DuckDB Parquet guidance](https://duckdb.org/docs/current/data/parquet/tips)
 and [Parquet query support](https://duckdb.org/docs/data/parquet).
 
+## Readiness and evidence decisions
+
+The SDK's readiness assessor operates on the same pinned reader as ordinary reads.
+It aggregates matching rows by catalog symbol and UTC date, compares the exact
+requested date set, and keeps live-store results provisional. Source and optional
+method/model filters prevent accidental mixing. It does not acquire data, verify
+raw receipts or advance an acceptance state. This small read-side layer avoids a
+second ingestion store or a scheduler hidden inside consumer queries.
+
+```mermaid
+flowchart LR
+    R[Pinned release] --> P[Daily presence assessment]
+    C[Explicit sessions and source contract] --> P
+    P --> G[Exact missing dates]
+    R --> V[Separate integrity and inclusion proofs]
+    G --> A[Consumer-owned acceptance]
+    V --> A
+```
+
+See [Readiness](READINESS.md) for bounds and [v0.2 design](V02_DESIGN.md) for
+proposed workflow changes. Proposed lifecycle/reference stages are not implemented
+by the presence API.
+
 ## Verification boundaries
 
 Publication compares each selected source table/partition against its output

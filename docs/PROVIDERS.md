@@ -1,7 +1,7 @@
 # Provider and ingestion reference
 
 This map locates implementation and source limits. It describes local code,
-reviewed on 2026-10-31; it is not a current vendor entitlement matrix or permission
+reviewed against source on 2026-11-07; it is not a current vendor entitlement matrix or permission
 to start a new backfill. Provider plans, prices and availability require fresh
 verification when an acquisition decision depends on them.
 

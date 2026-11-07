@@ -1,0 +1,153 @@
+{
+  "date": "2026-11-07",
+  "source_variant": "sanitized publication baseline",
+  "records": [
+    {
+      "path": "README.md",
+      "disposition": "canonical reviewed",
+      "sha256": "2214f6b039d5d067eac1714c6a8103f43cbc8d91409351482d9431316cb33241"
+    },
+    {
+      "path": "AGENTS.md",
+      "disposition": "authoritative instructions read and preserved",
+      "sha256": "20dc8aec7427497095ba003561ea32737d7f629eb442a4f5e695f38d76d5767e"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "disposition": "canonical reviewed",
+      "sha256": "d7e52432c80917c0ad50835af20be4623cba3cdf1f37b9fadd2a937ee940c044"
+    },
+    {
+      "path": "docs/BRAIN_VALUES.md",
+      "disposition": "canonical reviewed",
+      "sha256": "7474daf487d9cee2bb62e9bf76c011c328a58979c4bf25017e80a4dd0a1d0607"
+    },
+    {
+      "path": "docs/CI.md",
+      "disposition": "canonical reviewed",
+      "sha256": "672e01d6b58b4b2c8cb7ac2fa36735b216e829675c5cc0e7e257a3796c5ae8de"
+    },
+    {
+      "path": "docs/CLI_REFERENCE.md",
+      "disposition": "canonical reviewed",
+      "sha256": "d52f6ce235f3227c848306fd2eb2e1743cfdf65ca22ccaa4b17e8baeb36f22e9"
+    },
+    {
+      "path": "docs/CONFIGURATION.md",
+      "disposition": "canonical reviewed",
+      "sha256": "091c2a71b7ecc6883ec3e4ea8c41b502fb2e606e0efa5d6fe29303696c9580c7"
+    },
+    {
+      "path": "docs/DAILY_INDICATORS.md",
+      "disposition": "canonical reviewed",
+      "sha256": "9edb860fa013fb8b54456c726a89ae83e20b986e9353da85feb5a5cf823d2734"
+    },
+    {
+      "path": "docs/DATASETS.md",
+      "disposition": "canonical reviewed",
+      "sha256": "c4f8715888027ed6914b08c23f4c75e1b96256a1dc9d123a5ae630a8fe396c4d"
+    },
+    {
+      "path": "docs/DATA_ACCESS.md",
+      "disposition": "canonical reviewed",
+      "sha256": "439c6f02ce8578706e1e7b2e440e7d0205d85344a1c2f15da626cec42c8251c9"
+    },
+    {
+      "path": "docs/DATA_PROVENANCE.md",
+      "disposition": "canonical reviewed",
+      "sha256": "5e99152630b8970e92041c4dc702d08dbac7c4b0131b7c768ee8d2592cc0e6da"
+    },
+    {
+      "path": "docs/DEVELOPMENT.md",
+      "disposition": "canonical reviewed",
+      "sha256": "aa2e061cde895840bd1f7498f2d79f71fb646a406cad1a03fe2a610b718cb441"
+    },
+    {
+      "path": "docs/DOCKER.md",
+      "disposition": "canonical reviewed",
+      "sha256": "62c2193513fab141837eab260fd2c096904bdd94e67b6016e9f1bec8391b718f"
+    },
+    {
+      "path": "docs/DOC_REVIEW_20261021.md",
+      "disposition": "historical preserved",
+      "sha256": "61545192451779f199750e5d47a57be47c22d6e57afef34058139d5372a91822"
+    },
+    {
+      "path": "docs/DOC_REVIEW_20261031.md",
+      "disposition": "historical preserved",
+      "sha256": "b6666a8d49008c0dc4eea823f2ddd901d00f3cf03dbe6cbeaf27ffa0714ed162"
+    },
+    {
+      "path": "docs/DOC_REVIEW_20261107.md",
+      "disposition": "canonical reviewed",
+      "sha256": "86620b40ff7a76021e5cb17b012f8e81971241db9acf2dbcd0c6cc93a057bf05"
+    },
+    {
+      "path": "docs/EVIDENCE.md",
+      "disposition": "canonical reviewed",
+      "sha256": "9c2fc684b3f89a51c3fa6aa0f19287c0c33ac5e8a8b78ce473133079588baa35"
+    },
+    {
+      "path": "docs/HANDOVER.md",
+      "disposition": "canonical reviewed",
+      "sha256": "88e5262200d2af246cc94e29a0ed960518ac460ea4900a589b0fcff59ee68b1b"
+    },
+    {
+      "path": "docs/HISTORICAL_OPTIONS.md",
+      "disposition": "canonical reviewed",
+      "sha256": "f8772341fd8d6e9be57d672be3335d70ce6f7ae2b258e8731d89f4867555e200"
+    },
+    {
+      "path": "docs/MAINTENANCE.md",
+      "disposition": "canonical reviewed",
+      "sha256": "d8abd2299d54699b0b34a2d71fdf82450e199d4a4c3fe0136976d561e414289c"
+    },
+    {
+      "path": "docs/MIGRATION.md",
+      "disposition": "canonical reviewed",
+      "sha256": "671c861753aa20e79b56ccf0f8ddc0cc7f53e4281605efa90ada6495984716e7"
+    },
+    {
+      "path": "docs/NATIVE.md",
+      "disposition": "canonical reviewed",
+      "sha256": "df9380525cef18c46e8d686c77c17b3bd8a25d56a42bda5a6d431f783d2e5272"
+    },
+    {
+      "path": "docs/OPERATIONS.md",
+      "disposition": "canonical reviewed",
+      "sha256": "adad2d1fed81d8ba4b11bd75fc1b7f7b1cb2a59ce8e979f854fac29259431d3b"
+    },
+    {
+      "path": "docs/PROVIDERS.md",
+      "disposition": "canonical reviewed",
+      "sha256": "ed47722a64e27b2c8b66e48da7ac94ca3437ac82451a88396e3a8d51c0f6413a"
+    },
+    {
+      "path": "docs/READINESS.md",
+      "disposition": "canonical reviewed",
+      "sha256": "9f5b03affcc89f2c200793a9f821e88242a97aced9e80778006b912e841eeed6"
+    },
+    {
+      "path": "docs/README.md",
+      "disposition": "canonical reviewed",
+      "sha256": "0cce11a65ca08be0726782e23c100eb86fb1bac7e65fde4d1a7711f3ba5740aa"
+    },
+    {
+      "path": "docs/V02_DESIGN.md",
+      "disposition": "canonical reviewed",
+      "sha256": "54ecacd3887fd1d9aa2bd3fa150d424780c51325af86d83a16f8aab9429e8d81"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "disposition": "canonical reviewed",
+      "sha256": "e74f8b2967dc4dae08f7913351c407875097014016f7535caa8f38d02e3abb70"
+    }
+  ],
+  "nested_historical_markdown": {
+    "archive_count": 1,
+    "private_requirement_count": 0,
+    "disposition": "inventoried; historical content preserved; no semantic revalidation or source requests"
+  },
+  "excluded": "third-party vendor docs, private raw receipts/config/account data, runtime artifacts, external URLs",
+  "checks": "scripts/check_docs.py --cli; DOC_REVIEW_20261107.md defines exact scope"
+}

@@ -13,8 +13,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
       - run: make setup
+      - name: Check canonical documentation
+        run: make docs-check
       - name: Check readiness code
-        run: ./scripts/native.sh python -m ruff check --no-cache data_providers/readiness.py tests/test_readiness.py
+        run: ./scripts/native.sh python -m ruff check --no-cache data_providers/readiness.py tests/test_readiness.py scripts/check_docs.py tests/test_docs_check.py
       - name: Run full isolated unit suite
         run: make test
         env:

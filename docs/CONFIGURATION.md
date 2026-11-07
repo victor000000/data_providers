@@ -1,7 +1,7 @@
 # Configuration reference
 
 This guide describes configuration implemented in the source, reviewed on
-2026-10-31. It is a reference, not a request to change the live installation.
+2026-11-07. It is a reference, not a request to change the live installation.
 Use [Native environment](NATIVE.md) for setup and [Operations](OPERATIONS.md)
 before running or resuming jobs.
 
@@ -104,6 +104,15 @@ establish quote freshness, historical access or entitlement.
 The standalone data API and the consumer Options Workspace both document port
 8765. They are different server processes. If the consumer is already listening,
 select another free port for `data-providers serve`, for example `--port 8766`.
+
+## Public checkout and optional components
+
+A clean source checkout contains example configuration and the locked bootstrap,
+not local TOML, credentials, terminal binaries, market stores or private evidence.
+`make setup` installs declared extras; Java/terminal and native solver deployment
+remain separate optional operational tasks. Importing the SDK or listing datasets
+is not a broker/network readiness check. No setting grants broader acquisition
+scope or converts a missing datum into zero.
 
 ## Implementation references
 

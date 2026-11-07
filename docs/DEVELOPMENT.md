@@ -29,6 +29,7 @@ monkeypatching and reload behavior. See [Migration](MIGRATION.md) for original p
 Run on the host from `/home/vic/data_providers`:
 
 ```bash
+make docs-check
 make test
 make build
 ```
@@ -47,6 +48,24 @@ Create or reconcile the native environment with `make setup` on the Linux/WSL
 host. It selects `.venv-native` and the locked private Python. The old
 `.venv-container` and Docker recovery backups were deleted on 2026-10-23; do not recreate them. CI uses the
 same native Make targets. No Docker daemon or image is required.
+
+## CI and release review
+
+[check.yml](../.github/workflows/check.yml) runs on pushes, pull requests and manual
+dispatch with read-only repository permissions. It bootstraps the locked native
+environment, checks documentation and readiness lint, runs the full unit suite
+with JUnit output, and builds distributions. Its Python deployment target is 3.14;
+the package metadata minimum >=3.11 is not a claim of a tested Python matrix.
+No live source credentials are needed. Do not put runtime/config/account contents
+in CI artifacts. Keep software versions in pyproject.toml, package __version__ and
+the lockfile synchronized. Data release IDs are independently versioned.
+
+Review source changes against a coherent repository baseline, not a task-only
+snapshot missing package prerequisites. Confirm the remote branch/parent and
+exclude concurrent ingestion changes, private records and generated artifacts.
+The existing sanitized publication checkout can lag the live workspace: report
+which source tree was tested. Public docs must describe that tree's capabilities.
+A successful local suite/build does not substitute for exact-SHA hosted CI.
 
 ## Documentation rules
 

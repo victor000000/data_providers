@@ -1,7 +1,7 @@
 # CLI and HTTP reference
 
 Reviewed against [cli.py](../data_providers/cli.py) and
-[server.py](../data_providers/server.py) on 2026-10-31. Commands run from
+[server.py](../data_providers/server.py) on 2026-11-07. Commands run from
 `/home/vic/data_providers`. Examples containing `RELEASE_ID`, `DATASET` or a new
 export destination require real values. Planning and help do not launch market
 acquisition; execution, initialization, exports and publication are explicit writes.
@@ -41,6 +41,7 @@ one JSON document. Errors go through the CLI parser and return nonzero.
 | `schema DATASET` | Ordered field names and logical types in the selected backend/release |
 | `status DATASET` | Row count, configured time column/bounds, backend and release |
 | `read DATASET` | Ordered row objects, default limit 10,000 and maximum 100,000 |
+| `readiness CONTRACT.json` | Exact source-filtered daily presence for explicit symbols/session dates; see [contract](READINESS.md) |
 | `lake status` | Selected release manifest, or `status: unpublished` |
 | `lake verify` | Verify the selected/current immutable release files without provider I/O |
 
@@ -65,6 +66,21 @@ HTTP supports repeated `contract_id`; CLI does not expose that filter.
 `ORDER BY ALL` makes results deterministic, not a promise that the first limited
 rows are the latest observations. A table-wide min/max does not prove continuity
 or completeness for one symbol, source or contract.
+
+## Readiness contract
+
+```bash
+./scripts/native.sh data-providers --release RELEASE_ID readiness contract.json
+```
+
+`contract.json` must include version 1, dataset, unique symbols, explicit session
+dates and filters containing source or datasource_tag. required_columns is optional.
+See [Readiness](READINESS.md) for the full JSON and SDK example. This command
+prints an assessment and writes no runtime files. Incomplete coverage is a normal
+assessment, so it still returns exit code 0; malformed input/read errors return
+nonzero. Automation must inspect the JSON rather than infer readiness from exit 0.
+There is no HTTP readiness route. `ready` means daily presence in a pinned release,
+with release integrity and consumer acceptance separately not_assessed.
 
 ## Export and initialize
 

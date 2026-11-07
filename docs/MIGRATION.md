@@ -53,6 +53,16 @@ checkout/CI job must also obtain this project, or replace the editable source
 with an internally published wheel. No public registry release or repository
 remote is assumed by this migration.
 
+## Current software-release boundary
+
+The extraction/relocation counts below are historical. The development release
+0.2.0.dev0 adds daily-presence SDK/CLI assessment without rekeying history, changing
+stored schema or moving runtime paths. Consumers must still use their independent
+environments and an explicit tested provider commit/wheel. An editable sibling
+path alone does not pin source code for CI. The public sanitized source excludes
+private runtime and requirement receipts; it can lag the live installation.
+See [Evidence access](EVIDENCE.md) and [Development](DEVELOPMENT.md#ci-and-release-review).
+
 ## Runtime relocation (2026-10-17)
 
 The user subsequently authorized complete storage and maintenance independence.

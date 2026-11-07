@@ -1,4 +1,4 @@
-.PHONY: setup test build datasets plan
+.PHONY: setup test build datasets plan docs-check
 
 setup:
 	./scripts/setup-native.sh
@@ -14,3 +14,6 @@ datasets:
 
 plan:
 	./scripts/native.sh data-providers maintain
+
+docs-check:
+	./scripts/native.sh python scripts/check_docs.py --cli

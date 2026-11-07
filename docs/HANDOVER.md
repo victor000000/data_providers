@@ -12,7 +12,8 @@ It does not declare live workers healthy or delivered coverage complete. Consult
 3. [Architecture](ARCHITECTURE.md): raw/staging/canonical/published boundaries.
 4. [Data access](DATA_ACCESS.md) and [Dataset reference](DATASETS.md): consumer contracts.
 5. [Maintenance](MAINTENANCE.md) and [Operations](OPERATIONS.md): plan, locks and recovery.
-6. [Requirements](requirements/README.md): exact consumer requests and dated evidence.
+6. [Evidence access](EVIDENCE.md): private/public references and dated results.
+7. Requirements (private path `docs/requirements/README.md`; [access boundaries](EVIDENCE.md#private-evidence)): exact consumer requests and dated evidence.
 
 US and mainland CN underlying PV and listed options are the active acquisition
 scope. Actual futures, calendars, actions and specifications remain included.
@@ -58,6 +59,7 @@ solely to pick up an optimization.
 | Staged | Typed rows and stage validation | Are those exact keys/values in canonical storage? |
 | Merged | Transaction result and exact selected-stage inclusion | Is this content in a consumer-visible release? |
 | Published | Release ID and immutable manifest | Have release integrity and selected-row inclusion been checked? |
+| Daily presence assessed | Readiness contract hash, exact missing dates, backend and release | Have integrity, inclusion, freshness and method been accepted separately? |
 | Delivered | Verified release and exact inclusion proof for the requested selection | Does the consumer accept coverage, timing and method? |
 
 A checksum proves retained bytes, not full market coverage. A release verifier

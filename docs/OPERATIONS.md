@@ -4,9 +4,19 @@ Run commands on the host from `/home/vic/data_providers` through `scripts/native
 with the private native interpreter. [Native setup](NATIVE.md) covers paths and networking. This guide
 locates live evidence; it deliberately does not freeze changing counters or PIDs.
 
+## Status and recovery authority
+
+This guide combines stable recovery rules with dated installation-specific run
+notes. A section calling a worker active records its historical observation,
+not current process ownership. The consumer-monitor entries below are historical;
+its saved files do not authorize recreating a stopped/deleted monitor. Determine
+current owners from actual processes, kernel locks, immutable receipts and the
+latest scoped human instruction. No worker was probed or restarted for the
+November 7 documentation audit.
+
 ## Inspect before starting work
 
-1. Read [AGENTS.md](../AGENTS.md) and the [active market scope](requirements/MARKET_DATA_SCOPE_20261019.json).
+1. Read [AGENTS.md](../AGENTS.md) and the active market scope (private path `docs/requirements/MARKET_DATA_SCOPE_20261019.json`; [access boundaries](EVIDENCE.md#private-evidence)).
 2. Inspect current status, checkpoint, raw receipts, processes and locks. Preserve
    a healthy downloader and its finalizer; do not start an overlapping broad run.
 3. Compare request, staged-row and verified-delivery counters with the previous
@@ -17,8 +27,8 @@ locates live evidence; it deliberately does not freeze changing counters or PIDs
 
 | Evidence under `runtime/` | Purpose |
 | --- | --- |
-| `var/maintenance/consumer-monitor/status.json` | Current reconciliation; use its active acquisition object, not older top-level counters |
-| `var/maintenance/consumer-monitor/check-*.json` | Dated progress comparisons and consumer requirement checks |
+| `var/maintenance/consumer-monitor/status.json` | Historical reconciliation only; a retained file is not an active monitor |
+| `var/maintenance/consumer-monitor/check-*.json` | Historical progress comparisons; do not recreate the monitor from these paths |
 | `var/maintenance/iv-ten-year-20261019/status.json` | Frozen-universe frontier, request/staged counters and run state |
 | `var/maintenance/iv-ten-year-20261019/delivery-*.json` | New canonical rows and exact verified release receipts |
 | `var/maintenance/broker-recovery/latest.json` | Bounded TWS/Futu readiness, watcher decision and last resume |
@@ -43,7 +53,7 @@ scripts are installation-specific tools, not packaged CLI commands.
 
 ## Frozen ten-year underlying IV run
 
-The active run uses `.local/resume-ten-year-iv.py`, its same-named log, frozen
+The historically recorded run uses `.local/resume-ten-year-iv.py`, its same-named log, frozen
 `universe.json`, retained request/raw caches and `staging.duckdb` under the IV
 maintenance folder. It acquires `worker.lock`, resumes the saved symbol frontier,
 validates identity, preserves cumulative counters and invokes the existing merge/
@@ -57,19 +67,19 @@ The original 4,602-symbol attempt pass is complete. Selected failed-window retri
 use `.local/retry-failed-iv-windows-20261022.py` and the separate
 `iv-ten-year-20261019/retry-failed-20261022/` status, immutable queue and ledger.
 Every existing ledger key is skipped, including failed and uncertain attempts.
-Inspect the [historical-timeout diagnosis](requirements/IV_HISTORICAL_TIMEOUT_DEBUG_20261022.json)
+Inspect the historical-timeout diagnosis (private path `docs/requirements/IV_HISTORICAL_TIMEOUT_DEBUG_20261022.json`; [access boundaries](EVIDENCE.md#private-evidence))
 before recovery. API readiness alone does not prove historical transfer health.
 Scheduled maintenance must diagnose stalled transfers and apply bounded fixes;
 preserve a healthy worker and never cycle unchanged failures blindly.
-The [October 22 gap diagnosis](requirements/IV_GAP_DIAGNOSIS_AND_DELIVERY_20261022.json)
+The October 22 gap diagnosis (private path `docs/requirements/IV_GAP_DIAGNOSIS_AND_DELIVERY_20261022.json`; [access boundaries](EVIDENCE.md#private-evidence))
 separates proven pre-source periods from unresolved service responses. Error 162
 is a general HMDS message; use its text to distinguish permission refusals,
 timeouts, cancellations and no-data responses. Reclassification never clears an
 existing request ledger. New October 19–21 intervals are tracked separately under
 `runtime/var/maintenance/iv-gap-debug-20261022/recent*/status.json`; the recovery
 controller and monitor recognize these workers without restarting the old pass.
-See [acquisition requirement](requirements/TEN_YEAR_IV_ACQUISITION_20261019.md)
-and [damaged-cache recovery](requirements/IV_DAMAGED_CACHE_RECOVERY_20261021.json).
+See acquisition requirement (private path `docs/requirements/TEN_YEAR_IV_ACQUISITION_20261019.md`; [access boundaries](EVIDENCE.md#private-evidence))
+and damaged-cache recovery (private path `docs/requirements/IV_DAMAGED_CACHE_RECOVERY_20261021.json`; [access boundaries](EVIDENCE.md#private-evidence)).
 
 ## Automatic broker recovery
 
@@ -108,10 +118,10 @@ kernel lock ownership, not file existence, determines whether work is active.
   failed/unfinished selection uses that run's frozen windows and `--prices-only
   --priority-roots`, not a duplicate catalog discovery.
 - EWZ's October 19 capture/consumer acceptance is completed. It is a bounded historical
-  snapshot, not a continuously live feed. See the [exact-leg handoff](requirements/EWZ_PROPOSED_EXACT_LEG_LOOKUP_20261019.md).
+  snapshot, not a continuously live feed. See the exact-leg handoff (private path `docs/requirements/EWZ_PROPOSED_EXACT_LEG_LOOKUP_20261019.md`; [access boundaries](EVIDENCE.md#private-evidence)).
 - CN's October 20 afternoon exact-contract snapshot is completed. Do not automatically
   repeat it. Strict realtime acceptance remains blocked by delay/book-clock evidence
-  and skew failures. [Progress](requirements/CN_REALTIME_PNL_PROGRESS_20261020.json)
+  and skew failures. Progress (private path `docs/requirements/CN_REALTIME_PNL_PROGRESS_20261020.json`; [access boundaries](EVIDENCE.md#private-evidence))
   and `cn-held-source-20261020/latest.json` locate the durable packet.
 - `.local/check-cn-native-publication-20261020.py` checks exact canonical content
   against a verified publication without requesting another market capture.
@@ -343,3 +353,20 @@ every metadata receipt/raw hash, complete plan accounting and open-session
 calendar evidence. Exact-day listing evidence takes precedence, including an
 exact inventory with no eligible expiry. These candidate lists remain separate
 from frozen allocations; creating them sends no source requests.
+
+
+## Read-only troubleshooting sequence
+
+| Symptom | Inspect before any source request |
+| --- | --- |
+| No release / absent store | Effective home, selected backend and whether publication exists; reads never initialize |
+| Table missing in a pinned release | Its manifest/catalog and private/public setting; do not silently fall back to live stores |
+| Empty filtered selection | Actual catalog symbol/time fields, source spelling and date bounds; empty is not a connectivity diagnosis |
+| Ready flag surprises | qualification=daily_presence, explicit sessions, source/method filters and provisional live-store status |
+| HTTP 503 | Dataset availability, current writer and retained failure evidence; no blind download retry |
+| Port already in use | Existing listener ownership; choose a free port rather than stop another application |
+| Release verification fails | Exact retained manifest/files and previous good pinned release; preserve failure evidence |
+| Clean setup fails | Python/uv availability and lock/platform diagnostics; do not borrow a consumer environment |
+
+General docs do not authorize lifecycle changes. Follow the exact existing owner's
+checkpoint/recovery procedure when a bounded intervention is actually required.

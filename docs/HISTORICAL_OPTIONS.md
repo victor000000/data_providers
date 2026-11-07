@@ -1,7 +1,7 @@
 # Historical option research delivery — 2026-10-18
 
 This page preserves dated delivery/method evidence. For current acquisition scope,
-see [requirements](requirements/README.md); for live status, see
+see requirements (private path `docs/requirements/README.md`; [access boundaries](EVIDENCE.md#private-evidence)); for live status, see
 [Operations](OPERATIONS.md). Counts and “current” results below refer to their
 recorded run, not a continuously refreshed coverage claim.
 
@@ -26,8 +26,8 @@ margin handling, batch sequencing and rejected-order recovery remain in QC.
 This receipt does not change the documented quote entitlement blockers.
 
 Owner: data_providers. Consumer requirements are preserved in
-[QC requirement](requirements/QC_HISTORICAL_OPTIONS_20261018.md) and
-[screener IV request](requirements/SCREENER_IV_HISTORY_20261018.md).
+QC requirement (private path `docs/requirements/QC_HISTORICAL_OPTIONS_20261018.md`; [access boundaries](EVIDENCE.md#private-evidence)) and
+screener IV request (private path `docs/requirements/SCREENER_IV_HISTORY_20261018.md`; [access boundaries](EVIDENCE.md#private-evidence)).
 
 ## Current result and blockers
 

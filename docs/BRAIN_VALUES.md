@@ -1,7 +1,7 @@
 # BRAIN PV/options delivery
 
 This page preserves dated delivery/method evidence. For current acquisition scope,
-see [requirements](requirements/README.md); for live status, see
+see requirements (private path `docs/requirements/README.md`; [access boundaries](EVIDENCE.md#private-evidence)); for live status, see
 [Operations](OPERATIONS.md). Counts and “current” results below refer to their
 recorded run, not a continuously refreshed coverage claim.
 
@@ -11,6 +11,14 @@ values** (33,729 rows with explicit warmup/missing-input cases) through
 scope are in [Daily indicators](DAILY_INDICATORS.md). These calculated fields
 are distinct from the primitive mapping/sample inventory below and do not claim
 exact BRAIN equivalence or complete market coverage.
+
+## Scope correction — November 7, 2026
+
+Any older wording below describing HKG features as pending is historical only.
+HK/HKG and other non-US/non-mainland-CN listings are excluded from acquisition,
+not future delivery gaps. Primitive mappings and samples do not establish current
+market coverage or proprietary BRAIN formula equivalence. No stored evidence or
+historical receipt was changed in this correction.
 
 ## Current union and actual option sample — 2026-10-18
 
@@ -68,7 +76,7 @@ is performed by this audit.
 ## Initial cached-catalog PV sample
 
 The requirement is preserved in
-[the complete handoff](requirements/BRAIN_PV_OPTIONS_20261018.md). Its 20,181 field
+the complete handoff (private path `docs/requirements/BRAIN_PV_OPTIONS_20261018.md`; [access boundaries](EVIDENCE.md#private-evidence)). Its 20,181 field
 keys describe desired data; metadata is not historical value coverage.
 
 The provider audit `data_providers.jobs.audit.brain_inventory` verifies all catalog

@@ -32,6 +32,16 @@ available in `index_membership`; consumers must apply their research cutoff.
 
 Private datasets require `MarketData(private=True)` or CLI `--private`.
 
+## Assess the requested window
+
+Use [the readiness contract](READINESS.md) before interpreting table-wide counts
+as a usable window. `client.readiness(contract)` requires a source filter and an
+explicit caller-owned list of session dates. It reports exact missing dates;
+method/model equality filters keep independently derived series separate.
+It assesses daily presence only. Live-store assessments are provisional even when
+all requested dates are present. Published presence does not establish full grids,
+quote freshness, NBBO, release integrity or consumer acceptance.
+
 ## Deliver data to applications
 
 ```bash
@@ -103,7 +113,7 @@ port mapping is needed. Keep remote binds authenticated as described above.
   calibration, rankings and scenarios remain consumer-owned.
 
 See [architecture](ARCHITECTURE.md), [historical options](HISTORICAL_OPTIONS.md),
-[daily indicators](DAILY_INDICATORS.md) and the [requirements index](requirements/README.md).
+[daily indicators](DAILY_INDICATORS.md) and the requirements index (private path `docs/requirements/README.md`; [access boundaries](EVIDENCE.md#private-evidence)).
 
 ## Intraday vendor Greeks
 

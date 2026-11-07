@@ -1,6 +1,6 @@
 # Logical dataset reference
 
-Reviewed against [catalog.py](../data_providers/catalog.py) on 2026-10-31. These
+Reviewed against [catalog.py](../data_providers/catalog.py) on 2026-11-07. These
 are logical SDK/CLI names, not promises of populated or complete source coverage.
 For exact fields/types use `schema`; for declared keys and physical partitions
 inspect the pinned release manifest or the owning schema module.
@@ -87,6 +87,7 @@ or CLI `--private` and a backend/release containing the table.
 
 | Dataset | Physical table | Time field | Symbol field | Private |
 | --- | --- | --- | --- | --- |
+| `cn_option_contract_snapshots` | `option_contract_snapshots` | `report_date` | `underlying` | no |
 | `cn_optionable_underlyings` | `optionable_underlying_inventory` | — | `canonical` | no |
 | `cn_equity_daily` | `equity_daily` | `day` | `instrument_id` | no |
 | `cn_option_history_checks` | `option_history_checks` | `checked_utc` | `product` | no |

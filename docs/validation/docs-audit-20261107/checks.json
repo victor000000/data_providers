@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-07",
+  "source_variant": "sanitized publication baseline",
+  "doc_check_scope": {
+    "canonical_guides": 25,
+    "catalog_rows": 53,
+    "all_cli_help": true,
+    "errors": []
+  },
+  "full_suite": "687 passed, 2 warnings, 28 subtests passed in 17.16s",
+  "focused_doc_tests": "3 passed",
+  "lint": "passed: scripts/check_docs.py tests/test_docs_check.py",
+  "publication_build": "wheel and sdist succeeded during this documentation phase",
+  "hosted_ci": "pending serialized publisher and terminal exact-SHA acceptance; not established locally",
+  "log_sha256": {
+    "docs_check": "ad5c7c2723678abf4742a06046b188bdc2844b24a0c50e5030652c729b825256",
+    "full_suite": "838297fece7029077b23666da72b37f6c5860a89d4e145aefc794fbbef6e461e"
+  },
+  "limits": "Offline canonical checks only; no runtime health, live data coverage, vendor URLs or economic validation"
+}

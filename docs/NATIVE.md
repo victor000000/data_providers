@@ -29,6 +29,18 @@ overrides remain supported. It does not initialize, copy, or relocate databases.
 The host user must own writable runtime directories. Trading inputs remain source
 files: loaders read them and preserve original bytes in receipts.
 
+## Clean checkout checks
+
+After setup, run `make docs-check`, `make test` and `make build`. The unit suite
+sets an isolated temporary runtime; no live credentials or market download cycle
+is required. `data-providers datasets` lists contracts even before stores exist.
+A read of an absent store fails instead of creating it. `init` is a deliberate
+schema/seed write for a separately selected runtime, not part of read-only setup
+verification. Public clones omit private evidence; see [Evidence access](EVIDENCE.md).
+
+Python >=3.11 is the package constraint; setup/CI use 3.14. CI does not establish
+all supported Python/OS combinations, live connectivity or native solver parity.
+
 ## Brokers and optional native tools
 
 `IB_HOST` and `FUTU_HOST` default to `127.0.0.1` for native jobs. Set these explicitly
@@ -169,7 +181,7 @@ started requests finish and retain their receipts. Default result ordering is
 unchanged. These changes remove local scheduling limits; they do not establish a
 network speedup, and existing healthy workers are not restarted to adopt them.
 
-For the [one-minute SPXW request](requirements/QC_0DTE_CUSTOM_AXIS_1M_20261029.md),
+For the one-minute SPXW request (private path `docs/requirements/QC_0DTE_CUSTOM_AXIS_1M_20261029.md`; [access boundaries](EVIDENCE.md#private-evidence)),
 the Standard-compatible bulk unit is one dated expiry with `strike=*`,
 `right=both`, and `interval=1m`, within the frozen pilot and overlap audit. Preserve
 the full listed chain and actual session bounds. Do not expand to every expiry

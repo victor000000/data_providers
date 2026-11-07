@@ -2,8 +2,10 @@
 
 Start here for future setup, development, consumer integration and operations.
 These guides describe implemented contracts; dated requirements and runtime
-receipts establish what was requested and actually delivered. The reference
-expansion was reviewed against local code on 2026-10-31 without running acquisition.
+receipts establish what was requested and actually delivered. The October 31 reference expansion remains historical. The November 7 documentation
+audit checks the implemented development release and the separate publication
+baseline; [audit coverage](DOC_REVIEW_20261107.md) records scope and limitations.
+[Evidence access](EVIDENCE.md) explains what a public checkout does not contain.
 
 ## Choose a task
 
@@ -16,8 +18,9 @@ expansion was reviewed against local code on 2026-10-31 without running acquisit
 | Maintain US/CN data or trading logs | [Maintenance](MAINTENANCE.md) | [Operations](OPERATIONS.md) before execution |
 | Inspect progress or recover interrupted work | [Operations](OPERATIONS.md) | [Handover](HANDOVER.md) for evidence boundaries |
 | Add a source, dataset or schema change | [Development](DEVELOPMENT.md) | [Provider reference](PROVIDERS.md), [Architecture](ARCHITECTURE.md) |
-| Verify a change or delivery | [Validation](VALIDATION.md) | [Development](DEVELOPMENT.md), pinned release and inclusion receipts |
-| Resolve a consumer requirement or formula | [Requirements index](requirements/README.md) | Relevant dated request and delivery evidence |
+| Verify a change or delivery | [CI](CI.md) | Clean-checkout workflow, retained results and exact-SHA acceptance |
+| [Validation](VALIDATION.md) | [Development](DEVELOPMENT.md), pinned release and inclusion receipts |
+| Resolve a consumer requirement or formula | Requirements index (private path `docs/requirements/README.md`; [access boundaries](EVIDENCE.md#private-evidence)) | Relevant dated request and delivery evidence |
 
 Read-only daily coverage: [Readiness assessment](READINESS.md). Next release: [v0.2 design and self-review](V02_DESIGN.md).
 
@@ -37,8 +40,9 @@ Read-only daily coverage: [Readiness assessment](READINESS.md). Next release: [v
 | [Data access](DATA_ACCESS.md) | SDK, release pinning, exports, HTTP and interpretation |
 | [Architecture](ARCHITECTURE.md) | Storage, atomic publication, locks and compatibility |
 | [Development](DEVELOPMENT.md) | Source map, isolated checks, change recipes and documentation upkeep |
+| [CI](CI.md) | Clean-checkout workflow, retained results and exact-SHA acceptance |
 | [Validation](VALIDATION.md) | What tests/publication establish; dated validation history |
-| [Requirements index](requirements/README.md) | Current scope and consumer requirements/evidence |
+| Requirements index (private path `docs/requirements/README.md`; [access boundaries](EVIDENCE.md#private-evidence)) | Current scope and consumer requirements/evidence |
 | [Historical options](HISTORICAL_OPTIONS.md) | Dated quote/metadata deliveries and access limits |
 | [Daily indicators](DAILY_INDICATORS.md) | Implemented formulas, source basis and warmup |
 | [BRAIN values](BRAIN_VALUES.md) | Dated metadata/value delivery and equivalence limits |
@@ -50,7 +54,7 @@ Read-only daily coverage: [Readiness assessment](READINESS.md). Next release: [v
 ## Authority and freshness
 
 1. Human instructions and [AGENTS.md](../AGENTS.md) define authorization and ownership.
-2. [Active market scope](requirements/MARKET_DATA_SCOPE_20261019.json) limits acquisition.
+2. Active market scope (private path `docs/requirements/MARKET_DATA_SCOPE_20261019.json`; [access boundaries](EVIDENCE.md#private-evidence)) limits acquisition.
 3. Newer scoped requirements supersede the relevant older request, preserving evidence.
 4. Live worker receipts and release manifests establish actual progress/delivery.
 5. Dated reports and test counts describe their recorded run only.

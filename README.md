@@ -9,6 +9,18 @@ options**, including actual futures contracts. Supporting calendars, corporate
 actions and contract specifications are included. Other listing markets are out
 of scope. Independent broker execution/journal maintenance remains authorized.
 
+## Software and evidence status
+
+The working release is **0.2.0.dev0**. Daily readiness assessment is implemented;
+workflow migration, proof-bound delivery handoffs and effective-dated reference
+qualification are proposals in [the v0.2 design](docs/V02_DESIGN.md). Software
+version and a data-lake release identifier are different contracts.
+
+For a new source checkout use `make setup`, then `make docs-check`, `make test`
+and `make build`. These checks need no production warehouse. Installation alone
+does not provide broker credentials, subscriptions, raw evidence or live datasets.
+See [evidence access](docs/EVIDENCE.md) for public/private boundaries.
+
 ## Start here
 
 | Task | Guide |
@@ -19,7 +31,7 @@ of scope. Independent broker execution/journal maintenance remains authorized.
 | Read, pin, export or serve data | [Data access](docs/DATA_ACCESS.md) |
 | Understand stores, publication and ownership | [Architecture](docs/ARCHITECTURE.md) |
 | Develop and validate changes | [Development](docs/DEVELOPMENT.md) |
-| Find current requirements and preserved evidence | [Requirements](docs/requirements/README.md) |
+| Find current requirements and preserved evidence | Requirements (private path `docs/requirements/README.md`; [access boundaries](docs/EVIDENCE.md#private-evidence)) |
 | Take over the project and prepare a durable handoff | [Handover](docs/HANDOVER.md) |
 | Look up configuration, commands and all datasets | [Configuration](docs/CONFIGURATION.md), [CLI](docs/CLI_REFERENCE.md), [Datasets](docs/DATASETS.md) |
 | Browse all documentation | [Documentation index](docs/README.md) |
@@ -69,5 +81,5 @@ not establish complete coverage, timeliness, NBBO eligibility or validated consu
 performance. See [validation](docs/VALIDATION.md) and source/method limitations.
 
 [AGENTS.md](AGENTS.md) defines project working rules. The machine-readable
-[market scope](docs/requirements/MARKET_DATA_SCOPE_20261019.json) overrides older
+market scope (private path `docs/requirements/MARKET_DATA_SCOPE_20261019.json`; [access boundaries](docs/EVIDENCE.md#private-evidence)) overrides older
 global inventories; historical evidence does not expand acquisition.
